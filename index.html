@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="th" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Bowl Budy">
+    <meta name="theme-color" content="#0d9488">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Bowl Budy - คู่มือการดูแลขับถ่าย</title>
+
+    <!-- PWA Web App Manifest -->
+    <link rel="manifest" href='data:application/manifest+json,{"name":"Bowl Budy - Bowel Care App","short_name":"BowlBudy","start_url":".","display":"standalone","background_color":"#0d9488","theme_color":"#0d9488","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3004/3004458.png","sizes":"512x512","type":"image/png"}]}'>
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3004/3004458.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        input, textarea {
+            user-select: text;
+        }
+        body {
+            font-family: 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            overscroll-behavior-y: none;
+            height: 100vh;
+            height: 100dvh;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        
+        /* Smooth tab transition */
+        .tab-content {
+            animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col items-center justify-start antialiased selection:bg-teal-500 selection:text-white bg-slate-100 overflow-hidden">
+
+    <div id="mobile-container" class="w-full max-w-md h-full bg-slate-50 flex flex-col relative shadow-2xl overflow-hidden transition-all duration-300">
+
+        <!-- App Mobile Header -->
+        <header class="bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-700 text-white shadow-md sticky top-0 z-50 pt-3 pb-3 px-4 flex justify-between items-center select-none shrink-0">
+            <div class="flex items-center space-x-2.5 cursor-pointer active:scale-95 transition-transform" onclick="switchTab('home')">
+                <div class="bg-white/95 text-teal-700 p-2 rounded-xl shadow-inner flex items-center justify-center font-bold text-lg w-10 h-10 border border-teal-200">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight tracking-wide">Bowl Budy</h1>
+                    <p class="text-[11px] text-teal-100 font-light">แอปพลิเคชันดูแลการขับถ่าย</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button onclick="openInstallModal()" class="bg-white/20 hover:bg-white/30 active:scale-95 text-white p-2 rounded-xl text-xs transition flex items-center justify-center" title="ติดตั้งลงมือถือ">
+                    <i class="fa-solid fa-download"></i>
+                </button>
+                <button onclick="switchTab('admin')" class="bg-teal-800/70 active:scale-95 text-teal-100 px-3 py-1.5 rounded-xl text-xs font-medium transition flex items-center gap-1.5 border border-teal-400/30 shadow-sm">
+                    <i class="fa-solid fa-chart-pie"></i> หลังบ้าน
+                </button>
+            </div>
+        </header>
+
+        <main class="flex-1 w-full overflow-y-auto pb-24 relative bg-slate-50">
+
+            <!-- TAB 1: HOME / MENU -->
+            <div id="tab-home" class="tab-content p-4 space-y-4">
+                <!-- Welcome Card -->
+                <div class="bg-gradient-to-br from-teal-600 to-emerald-600 rounded-2xl p-5 text-white shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 opacity-10 text-9xl">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Mobile App</span>
+                            <h2 class="text-xl font-bold mt-1 mb-1">สวัสดีครับ 👋</h2>
+                        </div>
+                    </div>
+                    <p class="text-teal-100 text-xs sm:text-sm mb-4 leading-relaxed">Bowl Budy พร้อมช่วยเหลือคุณในการดูแลสุขภาพทางเดินอาหารและการขับถ่ายอย่างถูกวิธี</p>
+                    <div class="flex gap-2">
+                        <button onclick="switchTab('menu-1')" class="flex-1 bg-white text-teal-800 font-semibold px-3 py-2.5 rounded-xl text-xs shadow-md hover:bg-teal-50 active:scale-95 transition flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-book-open"></i> เริ่มต้นเรียนรู้
+                        </button>
+                        <button onclick="openInstallModal()" class="bg-teal-800/80 hover:bg-teal-900 text-white font-medium px-3 py-2.5 rounded-xl text-xs shadow-md active:scale-95 transition flex items-center gap-1.5 border border-teal-400/30">
+                            <i class="fa-solid fa-mobile-screen"></i> ติดตั้งแอป
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Install Mobile Shortcut Banner Card -->
+                <div onclick="openInstallModal()" class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-3.5 text-white shadow border border-emerald-400/30 flex items-center justify-between cursor-pointer active:scale-[0.98] transition">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center font-bold text-base text-white shrink-0">
+                            <i class="fa-solid fa-square-plus"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xs">ติดตั้ง Bowl Budy ลงบนมือถือของคุณ</h4>
+                            <p class="text-[10px] text-emerald-100">เพิ่มไอคอนแอปบนหน้าจอโฮมเพื่อเข้าใช้งานสะดวกยิ่งขึ้น</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-emerald-100 pl-2"></i>
+                </div>
+
+                <!-- Quick Menu Grid Header -->
+                <h3 class="font-bold text-gray-800 text-sm sm:text-base px-1 flex items-center gap-2 pt-1">
+                    <i class="fa-solid fa-list-ul text-teal-600"></i> เมนูหลักทั้งหมด
+                </h3>
+
+                <!-- Main Categories List -->
+                <div class="grid grid-cols-1 gap-3">
+                    <!-- Menu 1 -->
+                    <div onclick="switchTab('menu-1')" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-base shadow-sm group-hover:bg-teal-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm">1. ความรู้เบื้องต้น</h4>
+                                <p class="text-gray-500 text-xs">อาการท้องผูก, ประเภทอุจจาระ, สาเหตุ</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-400 text-xs"></i>
+                    </div>
+
+                    <!-- Menu 2 -->
+                    <div onclick="switchTab('menu-2')" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-base shadow-sm group-hover:bg-teal-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-user-injured"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm">2. ระดับอาการบาดเจ็บและเป้าหมาย</h4>
+                                <p class="text-gray-500 text-xs">บาดเจ็บส่วนบน / ส่วนล่าง และเป้าหมาย</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-400 text-xs"></i>
+                    </div>
+
+                    <!-- Menu 3 -->
+                    <div onclick="switchTab('menu-3')" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-base shadow-sm group-hover:bg-teal-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm">3. สิ่งที่ต้องปฏิบัติทุกวัน</h4>
+                                <p class="text-gray-500 text-xs">นวดท้อง, ฝึกขับถ่าย, ปฏิบัติประจำวัน</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-400 text-xs"></i>
+                    </div>
+
+                    <!-- Menu 4 -->
+                    <div onclick="switchTab('menu-4')" class="bg-white p-4 rounded-2xl shadow-sm border border-amber-200/80 active:bg-amber-50 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-base shadow-sm group-hover:bg-amber-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm">4. ไม่ถ่ายเกิน 1 วัน ควรทำอย่างไร</h4>
+                                <p class="text-gray-500 text-xs">เหน็บสบู่, ล้วงอุจจาระ, ใช้ยาสวนทวาร</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-400 text-xs"></i>
+                    </div>
+
+                    <!-- Menu 5 -->
+                    <div onclick="switchTab('menu-5')" class="bg-white p-4 rounded-2xl shadow-sm border border-red-200/80 active:bg-red-50 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold text-base shadow-sm group-hover:bg-red-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-sm">5. ภาวะฉุกเฉินและการเฝ้าระวัง</h4>
+                                <p class="text-gray-500 text-xs">Autonomic Dysreflexia และสัญญาณอันตราย</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-400 text-xs"></i>
+                    </div>
+
+                    <!-- Menu 6 -->
+                    <div onclick="switchTab('menu-6')" class="bg-gradient-to-r from-teal-50 to-emerald-50 p-4 rounded-2xl shadow-sm border border-teal-200/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center font-bold text-base shadow">
+                                <i class="fa-solid fa-clipboard-question"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-teal-950 text-sm">6. แบบทดสอบประเมินความเข้าใจ</h4>
+                                <p class="text-teal-700 text-xs">ทดสอบความรู้และรับคำแนะนำเฉพาะบุคคล</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                    </div>
+
+                    <!-- Menu 7 -->
+                    <div onclick="switchTab('menu-7')" class="bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-2xl shadow-sm border border-amber-200/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-base shadow">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-amber-950 text-sm">7. แบบประเมินความพึงพอใจ</h4>
+                                <p class="text-amber-800 text-xs">ให้ความคิดเห็นและประเมินระบบ</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-amber-600 text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB MENU 1: ความรู้เบื้องต้น -->
+            <div id="tab-menu-1" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หมวดที่ 1</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">1. ความรู้เบื้องต้นเกี่ยวกับการขับถ่าย</h2>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div onclick="switchTab('sub-1-1')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=200&q=80" alt="1.1 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=1.1'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">1.1</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">1.1 อาการท้องผูก (Constipation)</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">ความหมาย นิยาม และความสำคัญในการดูแล</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-1-2')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=200&q=80" alt="1.2 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=1.2'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">1.2</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">1.2 ประเภทอุจจาระ</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">เกณฑ์จำแนก Bristol Stool Chart</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-1-3')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=200&q=80" alt="1.3 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=1.3'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">1.3</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">1.3 สาเหตุของอาการท้องผูก</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">ปัจจัยจากร่างกาย การดื่มน้ำ และระบบประสาท</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-200 active:scale-95 transition">กลับหน้าหลัก</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 1.1 -->
+            <div id="tab-sub-1-1" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-1')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 1
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 1.1</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">อาการท้องผูก (Constipation)</h2>
+                    </div>
+                    
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-1-1" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=1.1+อาการท้องผูก'">
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                        <p class="bg-teal-50 p-3.5 rounded-2xl text-xs text-teal-950 border border-teal-100">
+                            คือ ภาวะที่มีการขับถ่ายอุจจาระน้อยกว่าปกติ อุจจาระแข็ง ขับถ่ายยาก ต้องออกแรงเบ่งมาก หรือมีความรู้สึกว่าถ่ายไม่สุด ซึ่งพบได้บ่อยในผู้ที่มีการเคลื่อนไหวร่างกายน้อยหรือผู้ที่มีภาวะบาดเจ็บไขสันหลัง
+                        </p>
+                        <p class="text-xs text-gray-600">
+                            การปล่อยให้เกิดอาการท้องผูกเรื้อรังอาจส่งผลกระทบต่อระบบไหลเวียนโลหิตและเพิ่มความเสี่ยงต่อภาวะแทรกซ้อนอันตราย เช่น Autonomic Dysreflexia ในผู้ป่วยบาดเจ็บไขสันหลังระดับ T6 ขึ้นไป
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-1')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 1.2 -->
+            <div id="tab-sub-1-2" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-1')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 1
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 1.2</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">ประเภทอุจจาระ (Bristol Stool Chart)</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-1-2" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=1.2+ประเภทอุจจาระ'">
+                    </div>
+
+                    <div class="space-y-2 text-xs text-gray-700">
+                        <p class="text-gray-600">ลักษณะอุจจาระแบ่งตามเกณฑ์สากล:</p>
+                        <div class="p-3 rounded-xl bg-red-50 border border-red-200">
+                            <strong class="text-red-700">แบบ 1-2:</strong> แข็งเป็นก้อนกระสุน ถ่ายยากมาก (บ่งบอกอาการท้องผูก)
+                        </div>
+                        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+                            <strong class="text-emerald-700">แบบ 3-4:</strong> นุ่มเป็นแท่งยาว ถ่ายง่าย (ลักษณะที่เหมาะสมที่สุด)
+                        </div>
+                        <div class="p-3 rounded-xl bg-amber-50 border border-amber-200">
+                            <strong class="text-amber-700">แบบ 5-7:</strong> กึ่งเหลวหรือเหลวเป็นน้ำ (บ่งบอกอาการท้องเสีย)
+                        </div>
+                    </div>
+                    <button onclick="switchTab('menu-1')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 1.3 -->
+            <div id="tab-sub-1-3" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-1')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 1
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 1.3</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">สาเหตุของอาการท้องผูก</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-1-3" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=1.3+สาเหตุท้องผูก'">
+                    </div>
+
+                    <ul class="list-disc pl-5 space-y-2 text-xs text-gray-600 leading-relaxed">
+                        <li>การเคลื่อนไหวร่างกายน้อยและการทำงานของลำไส้ลดลงตามสภาพร่างกาย</li>
+                        <li>การดื่มน้ำน้อยเกินไป (&lt; 1.5-2 ลิตร/วัน)</li>
+                        <li>การรับประทานอาหารที่มีกากใยไม่เพียงพอ</li>
+                        <li>ความผิดปกติของการทำงานระบบประสาทไขสันหลัง</li>
+                        <li>การกลั้นอุจจาระเป็นประจำทำให้ลำไส้สูญเสียการตอบสนอง</li>
+                    </ul>
+                    <button onclick="switchTab('menu-1')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- TAB MENU 2: ระดับอาการบาดเจ็บและเป้าหมาย -->
+            <div id="tab-menu-2" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หมวดที่ 2</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">2. ระดับอาการบาดเจ็บและเป้าหมาย</h2>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div onclick="switchTab('sub-2-1')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=200&q=80" alt="2.1 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=2.1'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">2.1</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">2.1 ระดับอาการบาดเจ็บ</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">การประเมินรอยโรคไขสันหลัง</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-2-2')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=200&q=80" alt="2.2 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=2.2'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">2.2</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">2.2 เป้าหมายการดูแลขับถ่าย</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">เป้าหมายภาพรวมและแผนฟื้นฟู</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-2-2-1')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=200&q=80" alt="2.2.1 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=2.2.1'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">2.2.1</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">2.2.1 อาการบาดเจ็บส่วนบน (Reflex Bowel)</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">การฝึกกระตุ้นรีเฟล็กซ์ให้ตรงเวลา</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-2-2-2')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=200&q=80" alt="2.2.2 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=2.2.2'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">2.2.2</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">2.2.2 อาการบาดเจ็บส่วนล่าง (Flaccid Bowel)</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">การป้องกันอุจจาระคั่งค้างและกลั้นไม่อยู่</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-200 active:scale-95 transition">กลับหน้าหลัก</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 2.1 -->
+            <div id="tab-sub-2-1" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-2')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 2
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 2.1</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">ระดับอาการบาดเจ็บ</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-2-1" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=2.1+ระดับอาการบาดเจ็บ'">
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                        <p class="bg-teal-50 p-3.5 rounded-2xl text-xs text-teal-950 border border-teal-100">
+                            ระดับความสูงของการบาดเจ็บไขสันหลังมีผลอย่างมากต่อระบบประสาทอัตโนมัติและการทำงานของลำไส้ใหญ่ ทำให้การขับถ่ายเปลี่ยนแปลงไปจากเดิมอย่างสิ้นเชิง
+                        </p>
+                        <p class="text-xs text-gray-600">
+                            แพทย์และพยาบาลจะทำการประเมินระดับรอยโรค (Level of Injury) เพื่อวางแผนการขับถ่ายที่เหมาะสมและปลอดภัยที่สุดสำหรับผู้ป่วยแต่ละราย
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-2')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 2.2 -->
+            <div id="tab-sub-2-2" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-2')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 2
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 2.2</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">เป้าหมายการดูแลขับถ่าย</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-2-2" src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=2.2+เป้าหมายการดูแล'">
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                        <p class="bg-teal-50 p-3.5 rounded-2xl text-xs text-teal-950 border border-teal-100">
+                            เป้าหมายหลักคือการขับถ่ายอุจจาระให้เป็นเวลา ป้องกันอุจจาระเล็ดราด และป้องกันภาวะแทรกซ้อนรุนแรงจากอาการท้องผูกเรื้อรัง
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-2')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 2.2.1 -->
+            <div id="tab-sub-2-2-1" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-2')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 2
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 2.2.1</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">อาการบาดเจ็บส่วนบน (Reflex Bowel)</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-2-2-1" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=2.2.1+Reflex+Bowel'">
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                        <p class="bg-teal-50 p-3.5 rounded-2xl text-xs text-teal-950 border border-teal-100">
+                            ลำไส้จะมีปฏิกิริยาตอบสนองอัตโนมัติ (Reflex) เป้าหมายคือ <strong>การกระตุ้นให้เกิดการขับถ่ายเป็นเวลา</strong> โดยอาศัยการกระตุ้นรีเฟล็กซ์ทางทวารหนักหรือการใช้วิธีสวน/เหน็บตามเวลาที่กำหนด เพื่อป้องกันอุจจาระเล็ดราด
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-2')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 2.2.2 -->
+            <div id="tab-sub-2-2-2" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-2')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 2
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 2.2.2</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">อาการบาดเจ็บส่วนล่าง (Flaccid Bowel)</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-2-2-2" src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=2.2.2+Flaccid+Bowel'">
+                    </div>
+
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
+                        <p class="bg-teal-50 p-3.5 rounded-2xl text-xs text-teal-950 border border-teal-100">
+                            หูรูดทวารหนักจะหย่อนตัวและสูญเสียรีเฟล็กซ์อัตโนมัติ เป้าหมายคือ <strong>การป้องกันอุจจาระคั่งค้างและป้องกันการกลั้นไม่อยู่</strong> โดยต้องอาศัยการช่วยล้วงอุจจาระออกเป็นประจำและการควบคุมอาหารที่มีกากใยสูง
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-2')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- TAB MENU 3: สิ่งที่ต้องปฏิบัติทุกวัน -->
+            <div id="tab-menu-3" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หมวดที่ 3</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">3. สิ่งที่ต้องปฏิบัติทุกวัน</h2>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div onclick="switchTab('sub-3-1')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=200&q=80" alt="3.1 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=3.1'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">3.1</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">3.1 สิ่งที่ต้องปฏิบัติตัวทุกวัน</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">การดื่มน้ำ กากใย และการขับถ่ายตรงเวลา</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-3-2')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=200&q=80" alt="3.2 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=3.2'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">3.2</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">3.2 การนวดหน้าท้อง</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">เทคนิคการนวดตามทิศทางลำไส้ใหญ่</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-3-3')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=200&q=80" alt="3.3 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=3.3'">
+                                    <span class="absolute bottom-1 right-1 bg-teal-800/90 text-white text-[9px] px-1 rounded font-bold">3.3</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">3.3 การฝึกการขับถ่าย</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">การกระตุ้น Digital Rectal Stimulation</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-200 active:scale-95 transition">กลับหน้าหลัก</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 3.1 -->
+            <div id="tab-sub-3-1" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-3')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 3
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 3.1</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">สิ่งที่ต้องปฏิบัติตัวทุกวัน</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-3-1" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=3.1+สิ่งที่ต้องปฏิบัติตัวทุกวัน'">
+                    </div>
+
+                    <ul class="list-disc pl-5 space-y-2 text-xs text-gray-600 leading-relaxed">
+                        <li>ดื่มน้ำสะอาดอย่างน้อย 1.5 - 2 ลิตรต่อวัน</li>
+                        <li>รับประทานอาหารมีกากใยสูง 25-30 กรัม/วัน</li>
+                        <li>พยายามฝึกขับถ่ายในเวลาเดิมทุกวันเพื่อสร้างนาฬิกาชีวิต</li>
+                        <li>เคลื่อนไหวร่างกายหรือทำกายภาพบำบัดตามความเหมาะสม</li>
+                    </ul>
+                    <button onclick="switchTab('menu-3')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 3.2 -->
+            <div id="tab-sub-3-2" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-3')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 3
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 3.2</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">การนวดหน้าท้อง (Abdominal Massage)</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-3-2" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=3.2+การนวดหน้าท้อง'">
+                    </div>
+
+                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
+                        <p class="bg-teal-50 p-3.5 rounded-2xl border border-teal-100 text-teal-950">
+                            ช่วยกระตุ้นการบีบตัวของลำไส้ใหญ่ <strong>ข้อควรระวัง: ควรนวดก่อนรับประทานอาหาร หรือหลังอาหารอย่างน้อย 1 ชั่วโมง ห้ามทำทันทีหลังทานอาหารเสร็จ</strong>
+                        </p>
+                        <ol class="list-decimal pl-5 space-y-2 text-gray-600">
+                            <li>นอนราบหรือปรับเตียงเอนสบาย</li>
+                            <li>ใช้นิ้วมือหรือฝ่ามือนวดวนตามเข็มนาฬิกา (ทิศทางการเดินทางของลำไส้ใหญ่ จากขวาไปซ้าย)</li>
+                            <li>เริ่มจากท้องน้อยด้านขวาขึ้นบน ข้ามไปซ้าย และลงมาที่ท้องน้อยด้านซ้าย</li>
+                        </ol>
+                    </div>
+                    <button onclick="switchTab('menu-3')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 3.3 -->
+            <div id="tab-sub-3-3" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-3')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 3
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 3.3</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">การฝึกการขับถ่าย (เฉพาะบาดเจ็บไขสันหลังส่วนบน)</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
+                        <img id="img-hero-sub-3-3" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=3.3+การฝึกการขับถ่าย'">
+                    </div>
+
+                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
+                        <p class="bg-teal-50 p-3.5 rounded-2xl border border-teal-100 text-teal-950">
+                            ทำเวลาเดิมทุกวัน (เช่น หลังอาหารเช้าหรือเย็น 20-30 นาที) ใช้วิธีการกระตุ้นรีเฟล็กซ์ เช่น การนวดกระตุ้นทวารหนักด้วยนิ้วมือ (Digital Rectal Stimulation) อย่างนุ่มนวลประมาณ 15-20 นาที เพื่อให้เกิดการขับถ่ายอย่างเป็นระบบ
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-3')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- TAB MENU 4: ไม่ถ่ายเกิน 1 วัน ควรทำอย่างไร -->
+            <div id="tab-menu-4" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-amber-200 space-y-4">
+                    <div class="border-b pb-3 flex items-center justify-between">
+                        <div>
+                            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หมวดที่ 4</span>
+                            <h2 class="text-base font-bold text-gray-800 mt-1">4. ไม่ถ่ายเกิน 1 วัน ควรทำอย่างไร</h2>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div onclick="switchTab('sub-4-1')" class="bg-amber-50/60 p-3 rounded-2xl border border-amber-100 active:bg-amber-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-amber-100 flex-shrink-0 overflow-hidden border border-amber-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=200&q=80" alt="4.1 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/d97706/ffffff?text=4.1'">
+                                    <span class="absolute bottom-1 right-1 bg-amber-800/90 text-white text-[9px] px-1 rounded font-bold">4.1</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-amber-950 text-xs sm:text-sm truncate">4.1 การเหน็บล้วงด้วยสบู่ / ยาเหน็บ</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">วิธีใช้แท่งสบู่หรือยาเหน็บกลีเซอรีน</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-amber-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-4-2')" class="bg-amber-50/60 p-3 rounded-2xl border border-amber-100 active:bg-amber-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-amber-100 flex-shrink-0 overflow-hidden border border-amber-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=200&q=80" alt="4.2 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/d97706/ffffff?text=4.2'">
+                                    <span class="absolute bottom-1 right-1 bg-amber-800/90 text-white text-[9px] px-1 rounded font-bold">4.2</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-amber-950 text-xs sm:text-sm truncate">4.2 การล้วงอุจจาระ</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">Digital Evacuation อย่างปลอดภัย</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-amber-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-4-3')" class="bg-amber-50/60 p-3 rounded-2xl border border-amber-100 active:bg-amber-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-amber-100 flex-shrink-0 overflow-hidden border border-amber-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1cdb?auto=format&fit=crop&w=200&q=80" alt="4.3 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/d97706/ffffff?text=4.3'">
+                                    <span class="absolute bottom-1 right-1 bg-amber-800/90 text-white text-[9px] px-1 rounded font-bold">4.3</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-amber-950 text-xs sm:text-sm truncate">4.3 การใช้ยาสวนทวารหนัก</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">ขั้นตอนการใช้น้ำเกลือสวนอย่างถูกวิธี</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-amber-600 text-xs"></i>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-200 active:scale-95 transition">กลับหน้าหลัก</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 4.1 -->
+            <div id="tab-sub-4-1" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-4')" class="text-amber-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 4
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-amber-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 4.1</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">การเหน็บล้วงด้วยสบู่ / หรือยาเหน็บ</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-amber-100 relative shadow-inner bg-amber-50">
+                        <img id="img-hero-sub-4-1" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/d97706/ffffff?text=4.1+การเหน็บสบู่+ยาเหน็บ'">
+                    </div>
+
+                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
+                        <p class="bg-amber-50 p-3.5 rounded-2xl border border-amber-100 text-amber-950">
+                            ใช้ยาเหน็บกลีเซอรีน หรือแท่งสบู่เหลี่ยมมนสอดเข้าทางทวารหนัก เพื่อกระตุ้นให้ลำไส้เกิดการบีบตัวและขับอุจจาระส่วนปลายออกมา
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-4')" class="w-full bg-amber-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 4.2 -->
+            <div id="tab-sub-4-2" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-4')" class="text-amber-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 4
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-amber-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 4.2</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">การล้วงอุจจาระ (Digital Evacuation)</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-amber-100 relative shadow-inner bg-amber-50">
+                        <img id="img-hero-sub-4-2" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/d97706/ffffff?text=4.2+การล้วงอุจจาระ'">
+                    </div>
+
+                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
+                        <p class="bg-amber-50 p-3.5 rounded-2xl border border-amber-100 text-amber-950">
+                            สวมถุงมือสะอาด หล่อลื่นด้วยเจล สอดนิ้วเข้าไปในทวารหนักอย่างนุ่มนวลเพื่อกวาดเอาอุจจาระก้อนแข็งที่ติดค้างอยู่ออกมา ทำด้วยความระมัดระวังเพื่อไม่ให้เยื่อบุผนังลำไส้ฉีกขาด
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-4')" class="w-full bg-amber-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 4.3 -->
+            <div id="tab-sub-4-3" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-4')" class="text-amber-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 4
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-amber-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 4.3</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">การใช้ยาสวนทวารหนัก</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-amber-100 relative shadow-inner bg-amber-50">
+                        <img id="img-hero-sub-4-3" src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1cdb?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/d97706/ffffff?text=4.3+การใช้ยาสวนทวาร'">
+                    </div>
+
+                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
+                        <p class="bg-amber-50 p-3.5 rounded-2xl border border-amber-100 text-amber-950">
+                            ใช้ลูกยางสวนหรือขวดสวนสำเร็จรูปบรรจุสารละลายน้ำเกลือสวนเข้าทวารหนัก เพื่อทำให้อุจจาระนุ่มและขับถ่ายออกมาได้ง่ายขึ้นตามคำแนะนำของบุคลากรทางการแพทย์
+                        </p>
+                    </div>
+                    <button onclick="switchTab('menu-4')" class="w-full bg-amber-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- TAB MENU 5: ภาวะฉุกเฉินและการเฝ้าระวัง -->
+            <div id="tab-menu-5" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-red-200 space-y-4">
+                    <div class="border-b pb-3 flex items-center justify-between">
+                        <div>
+                            <span class="bg-red-100 text-red-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หมวดที่ 5</span>
+                            <h2 class="text-base font-bold text-gray-800 mt-1">5. ภาวะฉุกเฉินและการเฝ้าระวัง</h2>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-red-50 text-red-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div onclick="switchTab('sub-5-1')" class="bg-red-50/60 p-3 rounded-2xl border border-red-100 active:bg-red-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-red-100 flex-shrink-0 overflow-hidden border border-red-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=200&q=80" alt="5.1 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/dc2626/ffffff?text=5.1'">
+                                    <span class="absolute bottom-1 right-1 bg-red-800/90 text-white text-[9px] px-1 rounded font-bold">5.1</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-red-950 text-xs sm:text-sm truncate">5.1 Autonomic Dysreflexia (AD)</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">สาเหตุและสัญญาณเตือนฉุกเฉิน</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-red-600 text-xs"></i>
+                        </div>
+
+                        <div onclick="switchTab('sub-5-2')" class="bg-red-50/60 p-3 rounded-2xl border border-red-100 active:bg-red-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3 flex-1 overflow-hidden">
+                                <div class="w-16 h-16 rounded-xl bg-red-100 flex-shrink-0 overflow-hidden border border-red-200 relative shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=200&q=80" alt="5.2 Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/dc2626/ffffff?text=5.2'">
+                                    <span class="absolute bottom-1 right-1 bg-red-800/90 text-white text-[9px] px-1 rounded font-bold">5.2</span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-red-950 text-xs sm:text-sm truncate">5.2 การปฏิบัติเมื่อเกิดภาวะฉุกเฉิน</h3>
+                                    <p class="text-gray-500 text-xs line-clamp-1">ขั้นตอนปฐมพยาบาลเบื้องต้นเร่งด่วน</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-red-600 text-xs"></i>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-200 active:scale-95 transition">กลับหน้าหลัก</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 5.1 -->
+            <div id="tab-sub-5-1" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-5')" class="text-red-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 5
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-red-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-red-100 text-red-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 5.1</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">Autonomic Dysreflexia (AD)</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-red-100 relative shadow-inner bg-red-50">
+                        <img id="img-hero-sub-5-1" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/dc2626/ffffff?text=5.1+Autonomic+Dysreflexia'">
+                    </div>
+
+                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
+                        <p class="bg-red-50 p-3.5 rounded-2xl border border-red-200 text-red-950">
+                            เป็นภาวะฉุกเฉินทางการแพทย์ที่อันตรายมาก มักเกิดในผู้ป่วยบาดเจ็บไขสันหลังระดับ T6 ขึ้นไป ซึ่งสาเหตุอันดับต้นๆ เกิดจาก <strong>"อาการท้องผูก ลำไส้อัดแน่น หรือกระเพาะปัสสาวะเต็ม"</strong>
+                        </p>
+                        <div class="bg-white p-3.5 rounded-xl border border-red-100 space-y-1">
+                            <h4 class="font-bold text-red-900 text-xs">สัญญาณเตือนสำคัญ:</h4>
+                            <ul class="list-disc pl-5 text-xs text-gray-700 space-y-1">
+                                <li>ปวดศีรษะรุนแรงและฉับพลัน</li>
+                                <li>ความดันโลหิตสูงขึ้นผิดปกติ</li>
+                                <li>เหงื่อออกมากบริเวณใบหน้าและลำคอ เหนือระดับที่บาดเจ็บ</li>
+                                <li>ผิวหนังแดงและมีผื่น ขนลุก</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button onclick="switchTab('menu-5')" class="w-full bg-red-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- SUB-MENU 5.2 -->
+            <div id="tab-sub-5-2" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('menu-5')" class="text-red-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดที่ 5
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-red-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-red-100 text-red-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หัวข้อย่อย 5.2</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">การปฏิบัติเมื่อเกิดภาวะฉุกเฉิน</h2>
+                    </div>
+
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-red-100 relative shadow-inner bg-red-50">
+                        <img id="img-hero-sub-5-2" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/dc2626/ffffff?text=5.2+การปฏิบัติภาวะฉุกเฉิน'">
+                    </div>
+
+                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
+                        <ol class="list-decimal pl-5 space-y-2 text-gray-600">
+                            <li><strong>ตั้งผู้ป่วยให้นั่งขึ้นทันที</strong> เพื่อช่วยลดความดันโลหิตในสมอง</li>
+                            <li>รีบตรวจสอบและแก้ไขสาเหตุทันที เช่น ตรวจสอบการอุดตันของอุจจาระหรือสวนปัสสาวะ</li>
+                            <li>หากอาการไม่ดีขึ้นภายในไม่กี่นาที ให้รีบนำตัวส่งโรงพยาบาลฉุกเฉินทันที</li>
+                        </ol>
+                    </div>
+                    <button onclick="switchTab('menu-5')" class="w-full bg-red-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                </div>
+            </div>
+
+            <!-- TAB MENU 6: แบบทดสอบประเมินความเข้าใจ -->
+            <div id="tab-menu-6" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หมวดที่ 6</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">6. แบบทดสอบประเมินความเข้าใจ</h2>
+                        <p class="text-xs text-gray-500 mt-1">ทำแบบทดสอบแบบ ถูก/ผิด เพื่อวัดระดับความเข้าใจและรับคำแนะนำเฉพาะบุคคล</p>
+                    </div>
+
+                    <!-- Quiz Form -->
+                    <form id="quiz-form" class="space-y-3.5 text-xs text-gray-700">
+                        <!-- Q1 -->
+                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                            <p class="font-medium text-xs text-gray-800 mb-2.5 leading-relaxed">ข้อ 1. การนวดหน้าท้องกระทำทันทีหลังรับประทานอาหารเสร็จเรียบร้อยเพื่อช่วยกระตุ้นให้อาหารเคลื่อนตัวได้เร็วยิ่งขึ้น</p>
+                            <div class="flex gap-4">
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q1" value="true" class="text-teal-600"> ถูก
+                                </label>
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q1" value="false" class="text-teal-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                            <p class="font-medium text-xs text-gray-800 mb-2.5 leading-relaxed">ข้อ 2. การฝึกขับถ่ายควรทำเป็นเวลาเดียวกันทุกวัน เพื่อฝึกนาฬิกาชีวิตของลำไส้</p>
+                            <div class="flex gap-4">
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q2" value="true" class="text-teal-600"> ถูก
+                                </label>
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q2" value="false" class="text-teal-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                            <p class="font-medium text-xs text-gray-800 mb-2.5 leading-relaxed">ข้อ 3. อาการเหงื่อออกมาก ความดันสูง ปวดศรีษะขณะท้องผูก อาจเป็นสัญญาณอันตราย (Autonomic Dysreflexia)</p>
+                            <div class="flex gap-4">
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q3" value="true" class="text-teal-600"> ถูก
+                                </label>
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q3" value="false" class="text-teal-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                            <p class="font-medium text-xs text-gray-800 mb-2.5 leading-relaxed">ข้อ 4. การนวดกระตุ้นทวารหนักด้วยนิ้วมือ (digital rectal stimulation)</p>
+                            <div class="flex gap-4">
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q4" value="true" class="text-teal-600"> ถูก
+                                </label>
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q4" value="false" class="text-teal-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                            <p class="font-medium text-xs text-gray-800 mb-2.5 leading-relaxed">ข้อ 5. เน้นการรับประทานอาหารที่มีกากใย 25-30มิลลิกรรมต่อวันและดื่มน้ำอย่างน้อย 1.5-2 ลิตร/วัน ช่วยป้องกันท้องผู้ก</p>
+                            <div class="flex gap-4">
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q5" value="true" class="text-teal-600"> ถูก
+                                </label>
+                                <label class="flex items-center gap-1.5 cursor-pointer bg-white px-3 py-1.5 rounded-xl border border-slate-200 flex-1 justify-center active:bg-teal-50">
+                                    <input type="radio" name="q5" value="false" class="text-teal-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="submitQuiz()" class="w-full bg-teal-600 hover:bg-teal-700 active:scale-95 text-white font-semibold py-3 rounded-xl text-xs shadow-md transition">
+                            ส่งคำตอบและประเมินผล
+                        </button>
+                    </form>
+
+                    <!-- Quiz Result Box -->
+                    <div id="quiz-result" class="hidden mt-4 p-4 rounded-2xl border text-xs space-y-2"></div>
+
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-200 active:scale-95 transition">กลับหน้าหลัก</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB MENU 7: แบบประเมินความพึงพอใจ -->
+            <div id="tab-menu-7" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-amber-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">หมวดที่ 7</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">7. แบบประเมินความพึงพอใจ</h2>
+                        <p class="text-xs text-gray-500 mt-1">ความคิดเห็นของท่านมีประโยชน์ต่อการพัฒนาแอปพลิเคชัน Bowl Budy</p>
+                    </div>
+
+                    <form id="satisfaction-form" onsubmit="submitSatisfaction(event)" class="space-y-4 text-xs text-gray-700">
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">ชื่อผู้ประเมิน (ไม่ระบุได้)</label>
+                            <input type="text" id="sat-name" placeholder="ระบุชื่อหรือผู้ใช้งาน..." class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:border-teal-500 bg-slate-50">
+                        </div>
+
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">ระดับความพึงพอใจภาพรวม</label>
+                            <div class="flex items-center gap-3 py-2 text-2xl text-amber-400">
+                                <i class="fa-solid fa-star cursor-pointer star-btn active active:scale-125 transition" data-value="1" onclick="setRating(1)"></i>
+                                <i class="fa-solid fa-star cursor-pointer star-btn active active:scale-125 transition" data-value="2" onclick="setRating(2)"></i>
+                                <i class="fa-solid fa-star cursor-pointer star-btn active active:scale-125 transition" data-value="3" onclick="setRating(3)"></i>
+                                <i class="fa-solid fa-star cursor-pointer star-btn active active:scale-125 transition" data-value="4" onclick="setRating(4)"></i>
+                                <i class="fa-solid fa-star cursor-pointer star-btn active active:scale-125 transition" data-value="5" onclick="setRating(5)"></i>
+                                <span id="rating-text" class="text-xs text-gray-600 font-bold ml-2">5/5 คะแนน</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">ข้อเสนอแนะเพิ่มเติม</label>
+                            <textarea id="sat-comment" rows="3" placeholder="พิมพ์ข้อเสนอแนะที่นี่..." class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:border-teal-500 bg-slate-50"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-semibold py-3 rounded-xl text-xs shadow-md transition">
+                            ส่งแบบประเมินความพึงพอใจ
+                        </button>
+                    </form>
+
+                    <div id="sat-success" class="hidden bg-emerald-50 text-emerald-800 p-3 rounded-xl text-xs border border-emerald-200 text-center">
+                        <i class="fa-solid fa-circle-check text-emerald-600"></i> บันทึกแบบประเมินความพึงพอใจเรียบร้อยแล้ว ขอบคุณครับ!
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full bg-teal-600 text-white rounded-xl text-xs py-2.5 font-semibold hover:bg-teal-700 active:scale-95 transition">กลับหน้าหลัก</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB ADMIN: หลังบ้าน -->
+            <div id="tab-admin" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+
+                <!-- LOGIN CARD -->
+                <div id="admin-login-box" class="bg-white rounded-2xl p-6 shadow-sm border border-teal-100 space-y-4">
+                    <div class="text-center space-y-1">
+                        <div class="w-12 h-12 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center mx-auto text-xl shadow-inner">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h2 class="text-base font-bold text-gray-800">เข้าสู่ระบบหลังบ้าน</h2>
+                        <p class="text-xs text-gray-500">กรุณาใส่ชื่อผู้ใช้และรหัสผ่านเพื่อดูรายงาน</p>
+                    </div>
+
+                    <form onsubmit="handleAdminLogin(event)" class="space-y-3 text-xs">
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">ชื่อผู้ใช้ (Username)</label>
+                            <input type="text" id="admin-user" placeholder="admin" required class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:border-teal-500 bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">รหัสผ่าน (Password)</label>
+                            <input type="password" id="admin-pass" placeholder="••••••" required class="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:border-teal-500 bg-slate-50">
+                        </div>
+                        <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 active:scale-95 text-white font-semibold py-3 rounded-xl text-xs shadow transition">
+                            เข้าสู่ระบบ
+                        </button>
+                    </form>
+                </div>
+
+                <!-- DASHBOARD CONTAINER -->
+                <div id="admin-dashboard-box" class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4 hidden">
+                    <div class="border-b pb-3 flex justify-between items-center">
+                        <div>
+                            <span class="bg-teal-800 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">ระบบหลังบ้าน</span>
+                            <h2 class="text-base font-bold text-gray-800 mt-1">รายงานผลความพึงพอใจ</h2>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="logoutAdmin()" class="text-gray-600 hover:text-gray-800 text-xs flex items-center gap-1 border border-gray-200 px-2.5 py-1 rounded-lg active:scale-95 transition" title="ออกจากระบบ">
+                                <i class="fa-solid fa-right-from-bracket"></i> ออก
+                            </button>
+                            <button onclick="clearAdminData()" class="text-red-500 hover:text-red-700 text-xs flex items-center gap-1 border border-red-200 px-2.5 py-1 rounded-lg active:scale-95 transition">
+                                <i class="fa-solid fa-trash-can"></i> ล้าง
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Stats Overview -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-amber-50 p-3.5 rounded-2xl border border-amber-100 text-center">
+                            <p class="text-xs text-amber-800 mb-0.5 font-medium">คะแนนเฉลี่ยรวม</p>
+                            <h3 id="admin-avg-rating" class="text-2xl font-bold text-amber-600">0.0</h3>
+                            <p class="text-[10px] text-amber-700">จากคะแนนเต็ม 5</p>
+                        </div>
+                        <div class="bg-teal-50 p-3.5 rounded-2xl border border-teal-100 text-center">
+                            <p class="text-xs text-teal-800 mb-0.5 font-medium">จำนวนผู้ประเมิน</p>
+                            <h3 id="admin-total-reviews" class="text-2xl font-bold text-teal-600">0</h3>
+                            <p class="text-[10px] text-teal-700">คน</p>
+                        </div>
+                    </div>
+
+                    <!-- Reviews List -->
+                    <div>
+                        <h3 class="font-bold text-gray-800 text-xs sm:text-sm mb-2">รายการความคิดเห็นล่าสุด</h3>
+                        <div id="admin-reviews-list" class="space-y-2 max-h-80 overflow-y-auto">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full bg-gray-100 text-gray-700 py-2.5 rounded-xl text-xs font-semibold hover:bg-gray-200 active:scale-95 transition">กลับหน้าหลัก</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <nav class="bg-white/95 backdrop-blur-md border-t border-slate-200/80 max-w-md w-full absolute bottom-0 left-0 right-0 z-40 shadow-lg shrink-0">
+            <div class="flex justify-around items-center py-2 text-[10px] sm:text-xs text-slate-500 font-medium select-none">
+                <button onclick="switchTab('home')" id="nav-home" class="flex flex-col items-center hover:text-teal-600 active:scale-90 transition text-teal-600">
+                    <i class="fa-solid fa-house text-lg mb-0.5"></i>
+                    <span>หน้าหลัก</span>
+                </button>
+                <button onclick="switchTab('menu-1')" id="nav-lesson" class="flex flex-col items-center hover:text-teal-600 active:scale-90 transition">
+                    <i class="fa-solid fa-book text-lg mb-0.5"></i>
+                    <span>บทเรียน</span>
+                </button>
+                <button onclick="switchTab('menu-6')" id="nav-quiz" class="flex flex-col items-center hover:text-teal-600 active:scale-90 transition">
+                    <i class="fa-solid fa-clipboard-question text-lg mb-0.5"></i>
+                    <span>แบบทดสอบ</span>
+                </button>
+                <button onclick="switchTab('menu-7')" id="nav-sat" class="flex flex-col items-center hover:text-teal-600 active:scale-90 transition">
+                    <i class="fa-solid fa-star text-lg mb-0.5"></i>
+                    <span>ประเมิน</span>
+                </button>
+                <button onclick="switchTab('admin')" id="nav-admin" class="flex flex-col items-center hover:text-teal-600 active:scale-90 transition">
+                    <i class="fa-solid fa-chart-pie text-lg mb-0.5"></i>
+                    <span>หลังบ้าน</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <div id="qr-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 hidden">
+        <div class="bg-white rounded-3xl p-6 max-w-xs w-full shadow-2xl text-center space-y-4">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h3 class="font-bold text-gray-800 text-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-mobile-screen text-teal-600"></i> สแกนเพื่อเปิดบนมือถือ
+                </h3>
+                <button onclick="closeQrModal()" class="text-gray-400 hover:text-gray-600 p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 inline-block shadow-inner">
+                <img id="qr-code-img" src="" alt="QR Code" class="w-48 h-48 mx-auto rounded-lg">
+            </div>
+
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+                ใช้กล้องถ่ายรูปหรือ Line บนมือถือของคุณสแกน QR Code นี้ เพื่อใช้งานแอป Bowl Budy แบบเต็มหน้าจอบนโทรศัพท์มือถือ
+            </p>
+
+            <button onclick="closeQrModal()" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">
+                ปิดหน้าต่าง
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Install Guide Modal -->
+    <div id="install-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 hidden">
+        <div class="bg-white rounded-3xl p-5 max-w-xs w-full shadow-2xl space-y-4">
+            <div class="flex justify-between items-center border-b pb-2">
+                <h3 class="font-bold text-gray-800 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-download text-teal-600"></i> วิธีติดตั้งแอปบนมือถือ
+                </h3>
+                <button onclick="closeInstallModal()" class="text-gray-400 hover:text-gray-600 p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3 text-xs text-gray-700">
+                <div class="bg-teal-50 p-3 rounded-2xl border border-teal-100">
+                    <h4 class="font-bold text-teal-900 mb-1 flex items-center gap-1.5">
+                        <i class="fa-brands fa-apple text-sm"></i> สำหรับ iOS (iPhone / iPad)
+                    </h4>
+                    <ol class="list-decimal pl-4 space-y-1 text-[11px] text-teal-950">
+                        <li>เปิดเว็บนี้ด้วยเบราว์เซอร์ <strong>Safari</strong></li>
+                        <li>กดปุ่ม <strong>แชร์ (Share) <i class="fa-solid fa-arrow-up-from-bracket"></i></strong> ที่แถบล่าง</li>
+                        <li>เลือก <strong>"เพิ่มไปยังหน้าจอโฮม" (Add to Home Screen)</strong></li>
+                    </ol>
+                </div>
+
+                <div class="bg-emerald-50 p-3 rounded-2xl border border-emerald-100">
+                    <h4 class="font-bold text-emerald-900 mb-1 flex items-center gap-1.5">
+                        <i class="fa-brands fa-android text-sm"></i> สำหรับ Android
+                    </h4>
+                    <ol class="list-decimal pl-4 space-y-1 text-[11px] text-emerald-950">
+                        <li>เปิดเว็บนี้ด้วยเบราว์เซอร์ <strong>Chrome</strong></li>
+                        <li>กดปุ่มเมนู <strong>3 จุด <i class="fa-solid fa-ellipsis-vertical"></i></strong> ที่มุมขวาบน</li>
+                        <li>เลือก <strong>"ติดตั้งแอป" หรือ "เพิ่มลงในหน้าจอหลัก"</strong></li>
+                    </ol>
+                </div>
+            </div>
+
+            <button onclick="closeInstallModal()" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">
+                เข้าใจแล้ว
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbz9m7EiYh3Ba-uQo1LPEW9bgqf57DzI-FwulAUBWBeyyEmzpzKGgzdtMJzAKMj_mbPJ/exec";
+        let currentRating = 5;
+        let isAdminLoggedIn = false;
+
+        // Open/Close Install Guide modal
+        function openInstallModal() {
+            document.getElementById('install-modal').classList.remove('hidden');
+        }
+
+        function closeInstallModal() {
+            document.getElementById('install-modal').classList.add('hidden');
+        }
+
+        // Open/Close QR Code modal
+        function openQrModal() {
+            const modal = document.getElementById('qr-modal');
+            const qrImg = document.getElementById('qr-code-img');
+            const currentUrl = encodeURIComponent(window.location.href);
+            qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${currentUrl}`;
+            modal.classList.remove('hidden');
+        }
+
+        function closeQrModal() {
+            document.getElementById('qr-modal').classList.add('hidden');
+        }
+
+        // Switch Tabs Function
+        function switchTab(tabId) {
+            const tabs = [
+                'home', 'menu-1', 'menu-2', 'menu-3', 'menu-4', 'menu-5', 'menu-6', 'menu-7', 'admin',
+                'sub-1-1', 'sub-1-2', 'sub-1-3',
+                'sub-2-1', 'sub-2-2', 'sub-2-2-1', 'sub-2-2-2',
+                'sub-3-1', 'sub-3-2', 'sub-3-3',
+                'sub-4-1', 'sub-4-2', 'sub-4-3',
+                'sub-5-1', 'sub-5-2'
+            ];
+            tabs.forEach(t => {
+                const el = document.getElementById('tab-' + t);
+                if (el) el.classList.add('hidden');
+            });
+
+            // Show target tab
+            const target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.classList.remove('hidden');
+                // Scroll main area to top
+                const mainArea = document.querySelector('main');
+                if (mainArea) mainArea.scrollTop = 0;
+            }
+
+            // Update bottom nav active highlight
+            updateNavHighlight(tabId);
+
+            // Check admin login view if admin tab is selected
+            if (tabId === 'admin') {
+                updateAdminView();
+            }
+        }
+
+        function updateNavHighlight(tabId) {
+            const navs = ['home', 'lesson', 'quiz', 'sat', 'admin'];
+            navs.forEach(n => {
+                const el = document.getElementById('nav-' + n);
+                if (el) {
+                    el.classList.remove('text-teal-600');
+                    el.classList.add('text-slate-500');
+                }
+            });
+
+            let activeNav = 'home';
+            if (tabId.startsWith('menu-1') || tabId.startsWith('sub-1')) activeNav = 'lesson';
+            else if (tabId.startsWith('menu-6')) activeNav = 'quiz';
+            else if (tabId.startsWith('menu-7')) activeNav = 'sat';
+            else if (tabId === 'admin') activeNav = 'admin';
+
+            const activeEl = document.getElementById('nav-' + activeNav);
+            if (activeEl) {
+                activeEl.classList.remove('text-slate-500');
+                activeEl.classList.add('text-teal-600');
+            }
+        }
+
+        // Admin Login Handling
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('admin-user').value.trim();
+            const p = document.getElementById('admin-pass').value.trim();
+
+            if (u === 'admin' && p === '123456') {
+                isAdminLoggedIn = true;
+                updateAdminView();
+                document.getElementById('admin-user').value = '';
+                document.getElementById('admin-pass').value = '';
+            } else {
+                alertCustom('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง (ใช้ admin / 123456)');
+            }
+        }
+
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            updateAdminView();
+        }
+
+        function updateAdminView() {
+            const loginBox = document.getElementById('admin-login-box');
+            const dashboardBox = document.getElementById('admin-dashboard-box');
+            if (isAdminLoggedIn) {
+                loginBox.classList.add('hidden');
+                dashboardBox.classList.remove('hidden');
+                loadAdminData();
+            } else {
+                loginBox.classList.remove('hidden');
+                dashboardBox.classList.add('hidden');
+            }
+        }
+
+        // Quiz Evaluation Logic
+        function submitQuiz() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            const q4 = document.querySelector('input[name="q4"]:checked');
+            const q5 = document.querySelector('input[name="q5"]:checked');
+
+            if (!q1 || !q2 || !q3 || !q4 || !q5) {
+                alertCustom('กรุณาตอบคำถามให้ครบทุกข้อก่อนส่งคำตอบครับ');
+                return;
+            }
+
+            let score = 0;
+            // Correct answers: Q1=false, Q2=true, Q3=true, Q4=true, Q5=true
+            if (q1.value === 'false') score++;
+            if (q2.value === 'true') score++;
+            if (q3.value === 'true') score++;
+            if (q4.value === 'true') score++;
+            if (q5.value === 'true') score++;
+
+            const resultBox = document.getElementById('quiz-result');
+            resultBox.classList.remove('hidden');
+
+            let levelText = '';
+            let levelColor = '';
+            let advice = '';
+
+            if (score === 5) {
+                levelText = 'ดีเยี่ยม (ยอดเยี่ยมมาก)';
+                levelColor = 'bg-emerald-50 border-emerald-200 text-emerald-800';
+                advice = 'คุณมีความเข้าใจในการดูแลขับถ่ายและการป้องกันอาการท้องผูกในระดับที่ดีเยี่ยม สามารถปฏิบัติตามแนวทางได้อย่างถูกต้องและปลอดภัย';
+            } else if (score >= 3) {
+                levelText = 'ปานกลาง (พอใช้)';
+                levelColor = 'bg-amber-50 border-amber-200 text-amber-800';
+                advice = 'คุณมีความเข้าใจในระดับปานกลาง แนะนำให้ทบทวนเนื้อหาในหัวข้อการนวดหน้าท้องและการเฝ้าระวังภาวะฉุกเฉิน Autonomic Dysreflexia เพิ่มเติมเพื่อความปลอดภัยสูงสุด';
+            } else {
+                levelText = 'ต้องทบทวนเนื้อหาเพิ่มเติม';
+                levelColor = 'bg-red-50 border-red-200 text-red-800';
+                advice = 'คุณยังมีความเข้าใจคลาดเคลื่อนในบางข้อ แนะนำให้อ่านบทเรียนตั้งแต่ข้อ 1 ถึงข้อ 5 ใหม่โดยละเอียด เพื่อป้องกันความเสี่ยงและดูแลสุขภาพขับถ่ายให้ถูกต้อง';
+            }
+
+            resultBox.className = `mt-4 p-4 rounded-2xl border text-xs space-y-2 ${levelColor}`;
+            resultBox.innerHTML = `
+                <h3 class="font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-square-poll-vertical"></i> ผลคะแนนของคุณ: ${score} / 5 คะแนน
+                </h3>
+                <p><strong>ระดับความเข้าใจ:</strong> ${levelText}</p>
+                <p><strong>คำแนะนำเฉพาะบุคคล:</strong> ${advice}</p>
+            `;
+            resultBox.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Custom modal replacement for alert()
+        function alertCustom(message) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-3xl p-5 max-w-xs w-full shadow-2xl text-center space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <p class="text-xs text-gray-800 font-medium leading-relaxed">${message}</p>
+                    <button onclick="this.closest('.fixed').remove()" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">ตกลง</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Star rating selector
+        function setRating(val) {
+            currentRating = val;
+            const stars = document.querySelectorAll('.star-btn');
+            stars.forEach((star, index) => {
+                if (index < val) {
+                    star.classList.add('active', 'text-amber-400');
+                    star.classList.remove('text-slate-300');
+                } else {
+                    star.classList.remove('active', 'text-amber-400');
+                    star.classList.add('text-slate-300');
+                }
+            });
+            document.getElementById('rating-text').innerText = val + '/5 คะแนน';
+        }
+
+        // Satisfaction Form Submission
+        async function submitSatisfaction(e) {
+            e.preventDefault();
+            const name = document.getElementById('sat-name').value.trim() || 'ผู้ใช้งานทั่วไป';
+            const comment = document.getElementById('sat-comment').value.trim() || 'ไม่มีข้อเสนอแนะเพิ่มเติม';
+
+            const reviewData = {
+                name: name,
+                rating: currentRating,
+                comment: comment,
+                date: new Date().toLocaleDateString('th-TH', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+            };
+
+            // Save to localStorage as local fallback
+            let reviews = JSON.parse(localStorage.getItem('bowl_budy_reviews') || '[]');
+            reviews.unshift(reviewData);
+            localStorage.setItem('bowl_budy_reviews', JSON.stringify(reviews));
+
+            // Send to Google Sheets API
+            if (GOOGLE_SHEET_API_URL) {
+                try {
+                    await fetch(GOOGLE_SHEET_API_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(reviewData)
+                    });
+                } catch (err) {
+                    console.error('Error sending to Google Sheet:', err);
+                }
+            }
+
+            // Show success message
+            const successEl = document.getElementById('sat-success');
+            successEl.classList.remove('hidden');
+            setTimeout(() => { successEl.classList.add('hidden'); }, 4000);
+
+            // Reset form
+            document.getElementById('satisfaction-form').reset();
+            setRating(5);
+        }
+
+        // Load Admin Dashboard Data
+        async function loadAdminData() {
+            let reviews = [];
+            let loadedFromCloud = false;
+
+            // Try fetching from Google Sheets API
+            if (GOOGLE_SHEET_API_URL) {
+                try {
+                    const response = await fetch(GOOGLE_SHEET_API_URL);
+                    const result = await response.json();
+                    if (result && result.status === 'success' && Array.isArray(result.data)) {
+                        reviews = result.data.slice().reverse(); // Show latest first
+                        loadedFromCloud = true;
+                    }
+                } catch (err) {
+                    console.warn('Cannot fetch from Google Sheets API, falling back to localStorage:', err);
+                }
+            }
+
+            // Fallback to localStorage if cloud fetch fails or returns empty
+            if (!loadedFromCloud) {
+                reviews = JSON.parse(localStorage.getItem('bowl_budy_reviews') || '[]');
+            }
+
+            const totalReviews = reviews.length;
+
+            let avgRating = 0;
+            if (totalReviews > 0) {
+                const sum = reviews.reduce((acc, r) => acc + Number(r.rating), 0);
+                avgRating = (sum / totalReviews).toFixed(1);
+            }
+
+            document.getElementById('admin-avg-rating').innerText = avgRating;
+            document.getElementById('admin-total-reviews').innerText = totalReviews;
+
+            const listEl = document.getElementById('admin-reviews-list');
+            if (totalReviews === 0) {
+                listEl.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 bg-slate-50 rounded-xl">ยังไม่มีข้อมูลการประเมินความพึงพอใจ</p>`;
+                return;
+            }
+
+            let html = '';
+            reviews.forEach(r => {
+                let starsHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    starsHtml += `<i class="fa-solid fa-star ${i <= r.rating ? 'text-amber-400' : 'text-slate-200'}"></i>`;
+                }
+                html += `
+                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 space-y-1">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-bold text-gray-800">${escapeHtml(r.name || 'ผู้ใช้งานทั่วไป')}</span>
+                            <span class="text-[10px] text-gray-400">${r.date || ''}</span>
+                        </div>
+                        <div class="flex items-center gap-1 text-xs">
+                            ${starsHtml} <span class="text-[10px] text-gray-500 font-medium ml-1">(${r.rating}/5)</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">${escapeHtml(r.comment || '-')}</p>
+                    </div>
+                `;
+            });
+            listEl.innerHTML = html;
+        }
+
+        // Clear Admin Data
+        function clearAdminData() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-3xl p-5 max-w-xs w-full shadow-2xl text-center space-y-3">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <p class="text-xs text-gray-800 font-semibold">ยืนยันการล้างข้อมูลรีวิวทั้งหมด?</p>
+                    <div class="flex gap-2 pt-2">
+                        <button onclick="this.closest('.fixed').remove()" class="flex-1 bg-gray-100 text-gray-700 py-2.5 rounded-xl text-xs font-semibold">ยกเลิก</button>
+                        <button onclick="localStorage.removeItem('bowl_budy_reviews'); loadAdminData(); this.closest('.fixed').remove();" class="flex-1 bg-red-600 text-white py-2.5 rounded-xl text-xs font-semibold active:scale-95 transition">ลบข้อมูล</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Helper to escape HTML
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+    </script>
+</body>
+</html>
