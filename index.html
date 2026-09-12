@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-title" content="Bowel Budy">
     <meta name="theme-color" content="#0d9488">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Bowel Buddy - คู่มือการดูแลขับถ่าย</title>
+    <title>Bowel Budy - คู่มือการดูแลขับถ่าย</title>
 
     <!-- PWA Web App Manifest -->
     <link rel="manifest" href='data:application/manifest+json,{"name":"Bowel Budy - Bowel Care App","short_name":"BowelBudy","start_url":".","display":"standalone","background_color":"#0d9488","theme_color":"#0d9488","icons":[{"src":"https://cdn-icons-png.flaticon.com/512/3004/3004458.png","sizes":"512x512","type":"image/png"}]}'>
@@ -26,7 +26,7 @@
             -webkit-tap-highlight-color: transparent;
             user-select: none;
         }
-        input, textarea {
+        input, textarea, select {
             user-select: text;
         }
         body {
@@ -70,7 +70,7 @@
                     <i class="fa-solid fa-seedling"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg leading-tight tracking-wide">Bowel Buddy</h1>
+                    <h1 class="font-bold text-lg leading-tight tracking-wide">Bowel Budy</h1>
                     <p class="text-[11px] text-teal-100 font-light">แอปพลิเคชันดูแลการขับถ่าย</p>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                             <h2 class="text-xl font-bold mt-1 mb-1">สวัสดีครับ 👋</h2>
                         </div>
                     </div>
-                    <p class="text-teal-100 text-xs sm:text-sm mb-4 leading-relaxed">Bowel Buddy พร้อมช่วยเหลือคุณในการดูแลสุขภาพทางเดินอาหารและการขับถ่ายอย่างถูกวิธี</p>
+                    <p class="text-teal-100 text-xs sm:text-sm mb-4 leading-relaxed">Bowel Budy พร้อมช่วยเหลือคุณในการดูแลสุขภาพทางเดินอาหารและการขับถ่ายอย่างถูกวิธี</p>
                     <div class="flex gap-2">
                         <button onclick="switchTab('menu-1')" class="flex-1 bg-white text-teal-800 font-semibold px-3 py-2.5 rounded-xl text-xs shadow-md hover:bg-teal-50 active:scale-95 transition flex items-center justify-center gap-1.5">
                             <i class="fa-solid fa-book-open"></i> เริ่มต้นเรียนรู้
@@ -117,7 +117,7 @@
                             <i class="fa-solid fa-square-plus"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-xs">ติดตั้ง Bowel Buddy ลงบนมือถือของคุณ</h4>
+                            <h4 class="font-bold text-xs">ติดตั้ง Bowel Budy ลงบนมือถือของคุณ</h4>
                             <p class="text-[10px] text-emerald-100">เพิ่มไอคอนแอปบนหน้าจอโฮมเพื่อเข้าใช้งานสะดวกยิ่งขึ้น</p>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                         <i class="fa-solid fa-chevron-right text-gray-400 text-xs"></i>
                     </div>
 
-                    <!-- Menu 6 -->
+                    <!-- Menu 6: แบบทดสอบประเมินความเข้าใจ -->
                     <div onclick="switchTab('menu-6')" class="bg-gradient-to-r from-teal-50 to-emerald-50 p-4 rounded-2xl shadow-sm border border-teal-200/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
                         <div class="flex items-center space-x-3.5">
                             <div class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center font-bold text-base shadow">
@@ -209,24 +209,24 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-teal-950 text-sm">แบบทดสอบประเมินความเข้าใจ</h4>
-                                <p class="text-teal-700 text-xs">ทดสอบความรู้และรับคำแนะนำเฉพาะบุคคล</p>
+                                <p class="text-teal-700 text-xs">Pre-test (ก่อนเรียน) และ Post-test (หลังเรียน)</p>
                             </div>
                         </div>
                         <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
                     </div>
 
                     <!-- Menu 7 -->
-                    <div onclick="switchTab('menu-7')" class="bg-gradient-to-r from-amber-50 to-orange-50 p-4 rounded-2xl shadow-sm border border-amber-200/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
+                    <div onclick="switchTab('menu-7')" class="bg-gradient-to-r from-emerald-50 to-teal-50 p-4 rounded-2xl shadow-sm border border-emerald-200/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group">
                         <div class="flex items-center space-x-3.5">
-                            <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-base shadow">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-base shadow">
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-amber-950 text-sm">แบบประเมินความพึงพอใจ</h4>
-                                <p class="text-amber-800 text-xs">ให้ความคิดเห็นและประเมินระบบ</p>
+                                <h4 class="font-bold text-emerald-950 text-sm">แบบประเมินความพึงพอใจ</h4>
+                                <p class="text-emerald-800 text-xs">ให้คะแนนดาว 1-5 ในแต่ละด้าน</p>
                             </div>
                         </div>
-                        <i class="fa-solid fa-chevron-right text-amber-600 text-xs"></i>
+                        <i class="fa-solid fa-chevron-right text-emerald-600 text-xs"></i>
                     </div>
                 </div>
             </div>
@@ -245,7 +245,7 @@
                         <div onclick="switchTab('sub-1-1')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
                             <div class="flex items-center space-x-3 flex-1 overflow-hidden">
                                 <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
-                                    <img src="img/a1.jpg?auto=format&fit=crop&w=200&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=1.1'">
+                                    <img src="img/a1.jpg" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=1.1'">
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">อาการท้องผูก</h3>
@@ -271,7 +271,7 @@
                         <div onclick="switchTab('sub-1-3')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
                             <div class="flex items-center space-x-3 flex-1 overflow-hidden">
                                 <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
-                                    <img src="img/a2.jpg?auto=format&fit=crop&w=200&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=1.3'">
+                                    <img src="img/a2.jpg" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=1.3'">
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">สาเหตุของอาการท้องผูก</h3>
@@ -299,7 +299,7 @@
                     </div>
                     
                     <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
-                        <img id="img-hero-sub-1-1" src="img/a1.jpg?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=อาการท้องผูก'">
+                        <img id="img-hero-sub-1-1" src="img/a1.jpg" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=อาการท้องผูก'">
                     </div>
 
                     <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
@@ -343,7 +343,6 @@
                                 </label>
                             </div>
 
-                            <!-- Dynamic Result Display Box -->
                             <div id="constipation-result-box" class="p-3.5 rounded-xl bg-teal-50 border border-teal-200 text-xs transition-all">
                                 <p class="font-bold text-teal-900 flex items-center gap-1.5" id="constipation-result-title">
                                     <i class="fa-solid fa-circle-info text-teal-600"></i> ผลการประเมิน: ติ๊กเลือกแล้ว 0 ข้อ
@@ -357,10 +356,6 @@
                                 <i class="fa-solid fa-circle-exclamation text-amber-600"></i> <strong>หมายเหตุ:</strong> อุจจาระเหลวแทบไม่เกิดขึ้นเลยหากไม่ได้ใช้ยาระบาย
                             </p>
                         </div>
-
-                        <p class="text-xs text-gray-600">
-                            การปล่อยให้เกิดอาการท้องผูกเรื้อรังอาจส่งผลกระทบต่อระบบไหลเวียนโลหิตและเพิ่มความเสี่ยงต่อภาวะแทรกซ้อนอันตราย เช่น Autonomic Dysreflexia ในผู้ป่วยบาดเจ็บไขสันหลังระดับ T6 ขึ้นไป
-                        </p>
                     </div>
                     <button onclick="switchTab('menu-1')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
                 </div>
@@ -376,7 +371,6 @@
                         <h2 class="text-base font-bold text-gray-800 mt-1">ประเภทอุจจาระ (Bristol Stool Chart)</h2>
                     </div>
 
-                    <!-- Infographic Image Container -->
                     <div class="w-full rounded-2xl overflow-hidden border border-teal-200 shadow-md bg-teal-50 relative group cursor-pointer" onclick="openImageModal(document.getElementById('img-bristol-chart').src)">
                         <img id="img-bristol-chart" src="img/01.png" alt="เกณฑ์จำแนกรูปทรงอุจจาระของบริสตอล" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80';">
                     </div>
@@ -400,7 +394,7 @@
                     </div>
 
                     <div class="w-full h-44 rounded-2xl overflow-hidden border border-teal-100 relative shadow-inner bg-teal-50">
-                        <img id="img-hero-sub-1-3" src="img/a2.jpg?auto=format&fit=crop&w=600&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=สาเหตุท้องผูก'">
+                        <img id="img-hero-sub-1-3" src="img/a2.jpg" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x300/0d9488/ffffff?text=สาเหตุท้องผูก'">
                     </div>
 
                     <ul class="list-disc pl-5 space-y-2 text-xs text-gray-600 leading-relaxed">
@@ -425,7 +419,6 @@
                     </div>
 
                     <div class="space-y-3">
-                        <!-- ปุ่ม 1: ส่วนบนของร่างกาย -->
                         <div onclick="switchTab('sub-2-1')" class="bg-teal-50/60 p-3.5 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
                             <div class="flex items-center space-x-3.5 flex-1 overflow-hidden">
                                 <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
@@ -439,11 +432,10 @@
                             <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
                         </div>
 
-                        <!-- ปุ่ม 2: ส่วนล่างของร่างกาย -->
                         <div onclick="switchTab('sub-2-2')" class="bg-teal-50/60 p-3.5 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
                             <div class="flex items-center space-x-3.5 flex-1 overflow-hidden">
                                 <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
-                                    <img src="img/03.png" alt="ส่วนล่างของร่างกาย" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=200&q=80'">
+                                    <img src="img/03.jpg" alt="ส่วนล่างของร่างกาย" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=200&q=80'">
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">ส่วนล่างของร่างกาย</h3>
@@ -467,10 +459,9 @@
                 </button>
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
                     <div class="border-b pb-3">
-                        <h2 class="text-base font-bold text-gray-800 mt-1">ส่วนบนของร่างกาย (Reflex Bowel)</h2>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">ส่วนบนของร่างกาย</h2>
                     </div>
 
-                    <!-- Infographic Image Container -->
                     <div class="w-full rounded-2xl overflow-hidden border border-teal-200 shadow-md bg-teal-50 relative group cursor-pointer" onclick="openImageModal(document.getElementById('img-upper-injury').src)">
                         <img id="img-upper-injury" src="img/02.jpg" alt="ส่วนบนของร่างกาย (ระดับคอและอก)" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=800&q=80';">
                     </div>
@@ -479,15 +470,13 @@
                     </p>
 
                     <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                        <!-- Target Box -->
                         <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-4 rounded-2xl border border-teal-200 shadow-sm space-y-2">
                             <h3 class="font-bold text-teal-900 text-xs sm:text-sm flex items-center gap-1.5">
                                 <i class="fa-solid fa-bullseye text-teal-600"></i> เป้าหมายและการดูแล (การบาดเจ็บไขสันหลังส่วนบน)
                             </h3>
                             <ul class="list-disc pl-5 space-y-1.5 text-xs text-teal-950 leading-relaxed font-medium">
-                                <li><strong>ลักษณะอุจจาระ:</strong> อุจจาระประเภทที่ 4 (เรียบเนียน นุ่ม คล้ายไส้กรอกหรือหู)</li>
+                                <li><strong>ลักษณะอุจจาระ:</strong> อุจจาระประเภทที่ 4</li>
                                 <li><strong>ความถี่ในการขับถ่าย:</strong> ถ่ายทุกวัน หรือวันเว้นวัน</li>
-                                <li><strong>การจัดการ:</strong> กำหนดเวลาขับถ่ายแน่นอน พร้อมใช้กระบวนการกระตุ้นรีเฟล็กซ์อย่างสม่ำเสมอ</li>
                             </ul>
                         </div>
                     </div>
@@ -505,16 +494,14 @@
                         <h2 class="text-base font-bold text-gray-800 mt-1">ส่วนล่างของร่างกาย</h2>
                     </div>
 
-                    <!-- Infographic Image Container -->
                     <div class="w-full rounded-2xl overflow-hidden border border-teal-200 shadow-md bg-teal-50 relative group cursor-pointer" onclick="openImageModal(document.getElementById('img-lower-injury').src)">
-                        <img id="img-lower-injury" src="img/03.png" alt="ส่วนล่างของร่างกาย (ระดับเอวและกระเบนเหน็บ)" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=800&q=80';">
+                        <img id="img-lower-injury" src="img/03.jpg" alt="ส่วนล่างของร่างกาย (ระดับเอวและกระเบนเหน็บ)" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=800&q=80';">
                     </div>
                     <p class="text-xs text-gray-500 text-center font-medium">
                         <i class="fa-solid fa-magnifying-glass-plus text-teal-600 mr-1"></i> แตะที่ภาพเพื่อเปิดดูรูปขนาดเต็ม
                     </p>
 
                     <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                        <!-- Target Box -->
                         <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-4 rounded-2xl border border-teal-200 shadow-sm space-y-2">
                             <h3 class="font-bold text-teal-900 text-xs sm:text-sm flex items-center gap-1.5">
                                 <i class="fa-solid fa-bullseye text-teal-600"></i> เป้าหมายและการดูแล (การบาดเจ็บไขสันหลังส่วนล่าง)
@@ -543,7 +530,7 @@
                         <div onclick="switchTab('sub-3-1')" class="bg-teal-50/60 p-3 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
                             <div class="flex items-center space-x-3 flex-1 overflow-hidden">
                                 <div class="w-16 h-16 rounded-xl bg-teal-100 flex-shrink-0 overflow-hidden border border-teal-200 relative shadow-sm">
-                                    <img src="img/a3.jpg?auto=format&fit=crop&w=200&q=80" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=3.1'">
+                                    <img src="img/a3.jpg" alt="Thumbnail" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/200x200/0d9488/ffffff?text=3.1'">
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <h3 class="font-bold text-teal-900 text-xs sm:text-sm truncate">สิ่งที่ต้องปฏิบัติตัวทุกวัน</h3>
@@ -596,9 +583,7 @@
                         <h2 class="text-base font-bold text-gray-800 mt-1">สิ่งที่ต้องปฏิบัติตัวทุกวัน</h2>
                     </div>
 
-                    <!-- Visual Cards for Daily Practices -->
                     <div class="space-y-3.5">
-                        <!-- Practice 1: Medication -->
                         <div class="bg-teal-50/70 p-3.5 rounded-2xl border border-teal-100 flex items-start gap-3.5 shadow-sm">
                             <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center font-bold text-xl shrink-0 shadow">
                                 <i class="fa-solid fa-pills"></i>
@@ -608,19 +593,18 @@
                                     <i class="fa-solid fa-prescription-bottle-medical text-teal-600"></i> รับประทานยาตามแผนการรักษา
                                 </h3>
                                 <p class="text-xs text-gray-600 leading-relaxed">
-                                    ปฏิบัติตามคำสั่งแพทย์และทานยาให้ตรงเวลาสม่ำเสมอ เพื่อให้การดูแลระบบขับถ่ายและการควบคุมภาวะแทรกซ้อนเป็นไปอย่างมีประสิทธิภาพ
+                                    ปฏิบัติตามคำสั่งแพทย์และทานยาให้ตรงเวลาสม่ำเสมอ เพื่อให้การดูแลระบบขับถ่ายเป็นไปอย่างมีประสิทธิภาพ
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Practice 2: Water Intake -->
                         <div class="bg-blue-50/70 p-3.5 rounded-2xl border border-blue-100 flex items-start gap-3.5 shadow-sm">
                             <div class="w-12 h-12 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-xl shrink-0 shadow">
                                 <i class="fa-solid fa-bottle-water"></i>
                             </div>
                             <div class="space-y-1">
                                 <h3 class="font-bold text-blue-950 text-xs sm:text-sm flex items-center gap-1.5">
-                                    <i class="fa-solid fa-glass-water text-blue-600"></i> ดื่มน้ำสะอาดอย่างเพียงพอ
+                                    <i class="fa-solid fa-glass-water text-blue-600"></i> ดูแลให้ได้รับน้ำอย่างเพียงพอ
                                 </h3>
                                 <p class="text-xs text-gray-600 leading-relaxed">
                                     ดูแลให้ได้รับน้ำมากกว่า <strong class="text-blue-700">1.5 – 2.5 ลิตร/วัน</strong> <span class="text-gray-500 text-[11px]">(ในรายที่ไม่มีข้อห้ามทางการแพทย์)</span> เพื่อให้อุจจาระนุ่มและเคลื่อนตัวได้ง่าย
@@ -628,7 +612,6 @@
                             </div>
                         </div>
 
-                        <!-- Practice 3: Avoid Caffeine, Tea & Coffee -->
                         <div class="bg-amber-50/70 p-3.5 rounded-2xl border border-amber-100 flex items-start gap-3.5 shadow-sm">
                             <div class="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold text-xl shrink-0 shadow">
                                 <i class="fa-solid fa-mug-hot"></i>
@@ -638,12 +621,11 @@
                                     <i class="fa-solid fa-ban text-red-500"></i> หลีกเลี่ยงเครื่องดื่มที่มีคาเฟอีน
                                 </h3>
                                 <p class="text-xs text-gray-600 leading-relaxed">
-                                    งดหรือหลีกเลี่ยง <strong class="text-amber-900">ชา กาแฟ และเครื่องดื่มคาเฟอีน</strong> เนื่องจากมีฤทธิ์ขับปัสสาวะ ร่างกายสูญเสียน้ำ และอาจทำให้เพิ่มอาการท้องผูกยิ่งขึ้น
+                                    งดหรือหลีกเลี่ยง <strong class="text-amber-900">ชา กาแฟ และเครื่องดื่มคาเฟอีน</strong> เพราะจะเพิ่มอาการท้องผูก เนื่องจากมีฤทธิ์ขับปัสสาวะ
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Practice 4: Dietary Fiber Intake -->
                         <div class="bg-emerald-50/70 p-3.5 rounded-2xl border border-emerald-100 flex items-start gap-3.5 shadow-sm">
                             <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-xl shrink-0 shadow">
                                 <i class="fa-solid fa-carrot"></i>
@@ -653,7 +635,7 @@
                                     <i class="fa-solid fa-apple-whole text-emerald-600"></i> รับประทานอาหารที่มีใยอาหารสูง
                                 </h3>
                                 <p class="text-xs text-gray-600 leading-relaxed">
-                                    ทานอาหารให้เพียงพอ โดยมีใยอาหารมากกว่า <strong class="text-emerald-700">25–30 กรัม/วัน</strong>
+                                    รับประทานอาหารให้เพียงพอ มีใยอาหารมากกว่า <strong class="text-emerald-700">25–30 กรัม/วัน</strong>
                                 </p>
                                 <div class="bg-white p-2.5 rounded-xl border border-emerald-200/80 text-[11px] text-emerald-900 space-y-1 mt-1 font-medium">
                                     <div class="flex items-center gap-1.5">
@@ -666,26 +648,23 @@
                                     </div>
                                 </div>
 
-                                <!-- Infographics for Dietary Fiber -->
                                 <div class="mt-3 space-y-3 pt-2 border-t border-emerald-200/60">
                                     <p class="text-[11px] font-bold text-emerald-900 flex items-center gap-1">
-                                        <i class="fa-solid fa-image text-emerald-600"></i> ตัวอย่างอาหารและมื้ออาหารไฟเบอร์สูงเพิ่มเติม:
+                                        <i class="fa-solid fa-image text-emerald-600"></i> ตัวอย่างอาหารและมื้ออาหารไฟเบอร์สูง:
                                     </p>
 
-                                    <!-- Image 1: 04.png -->
                                     <div class="w-full rounded-2xl overflow-hidden border border-emerald-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-fiber-1').src)">
-                                        <img id="img-fiber-1" src="img/04.png" alt="ตัวอย่างผักและผลไม้สำหรับไฟเบอร์" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/059669/ffffff?text=ตัวอย่างผักและผลไม้ไฟเบอร์สูง';">
+                                        <img id="img-fiber-1" src="img/04.png" alt="ตัวอย่างผักและผลไม้สำหรับไฟเบอร์" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/059669/ffffff?text=04.png';">
                                     </div>
 
-                                    <!-- Image 2: 05.png -->
                                     <div class="w-full rounded-2xl overflow-hidden border border-emerald-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-fiber-2').src)">
-                                        <img id="img-fiber-2" src="img/05.png" alt="มื้ออาหารและเป้าหมายไฟเบอร์ใน 1 วัน" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/059669/ffffff?text=มื้ออาหารและเป้าหมายไฟเบอร์ใน+1+วัน';">
+                                        <img id="img-fiber-2" src="img/05.png" alt="มื้ออาหารและเป้าหมายไฟเบอร์ใน 1 วัน" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/059669/ffffff?text=05.png';">
                                     </div>
 
-                                    <!-- Image 3: 06.png -->
                                     <div class="w-full rounded-2xl overflow-hidden border border-emerald-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-fiber-3').src)">
-                                        <img id="img-fiber-3" src="img/06.png" alt="ผักพื้นบ้านไฟเบอร์สูง" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/059669/ffffff?text=ผักพื้นบ้านไฟเบอร์สูง';">
+                                        <img id="img-fiber-3" src="img/06.png" alt="ผักพื้นบ้านไฟเบอร์สูง" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/059669/ffffff?text=06.png';">
                                     </div>
+
                                     <p class="text-[10px] text-gray-500 text-center font-medium pt-1">
                                         <i class="fa-solid fa-magnifying-glass-plus text-emerald-600 mr-1"></i> แตะที่ภาพเพื่อดูขยายเต็มจอ
                                     </p>
@@ -709,7 +688,6 @@
                     </div>
 
                     <div class="space-y-3 text-xs sm:text-sm text-gray-700 leading-relaxed">
-                        <!-- Info Card -->
                         <div class="bg-teal-50 p-4 rounded-2xl border border-teal-200 text-teal-950 space-y-2">
                             <h3 class="font-bold text-teal-900 flex items-center gap-1.5">
                                 <i class="fa-solid fa-hand-holding-medical text-teal-600"></i> ข้อมูลการนวดหน้าท้อง
@@ -719,10 +697,9 @@
                             </p>
                         </div>
 
-                        <!-- Precautions Card -->
                         <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 text-amber-950 space-y-2">
                             <h3 class="font-bold text-amber-900 flex items-center gap-1.5">
-                                <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> ข้อควรปฏิบัติและข้อควรระวัง
+                                <i class="fa-solid fa-triangle-exclamation text-amber-600"></i> ข้อควรปฏิบัติ
                             </h3>
                             <ul class="list-disc pl-5 space-y-1.5 text-xs text-amber-950">
                                 <li>ควรปัสสาวะหรือสวนปัสสาวะให้เรียบร้อยก่อนการนวด</li>
@@ -732,11 +709,7 @@
                             </ul>
                         </div>
 
-                        <!-- Image 07: 07.png -->
                         <div class="space-y-1">
-                            <p class="font-bold text-teal-900 text-xs flex items-center gap-1">
-                                <i class="fa-solid fa-image text-teal-600"></i> ข้อห้ามสำคัญที่ต้องระวังก่อนนวดหน้าท้อง:
-                            </p>
                             <div class="w-full rounded-2xl overflow-hidden border border-teal-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-massage-07').src)">
                                 <img id="img-massage-07" src="img/07.png" alt="ข้อห้ามสำคัญก่อนนวดหน้าท้อง" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/0d9488/ffffff?text=07.png';">
                             </div>
@@ -745,10 +718,9 @@
                             </p>
                         </div>
 
-                        <!-- Preparation Steps -->
                         <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
                             <h3 class="font-bold text-teal-900 text-xs sm:text-sm flex items-center gap-1.5">
-                                <i class="fa-solid fa-clipboard-list text-teal-600"></i> การเตรียมตัวก่อนนวด
+                                <i class="fa-solid fa-clipboard-list text-teal-600"></i> การเตรียมตัว
                             </h3>
                             <ol class="list-decimal pl-5 space-y-2 text-xs text-gray-700 leading-relaxed">
                                 <li>จัดท่านอนหงายในท่าที่สบายและจัดเสื้อผ้าให้เปิดบริเวณหน้าท้องเท่านั้น ในรายที่มีอาการเกร็งบริเวณหน้าท้องให้ใช้หมอนรองใต้ขาพับเพื่อให้กล้ามเนื้อหน้าท้องหย่อนตัว กรณีผู้ป่วยที่นวดหน้าท้องด้วยตนเองให้อยู่ในท่ากึ่งนั่งกึ่งนอน และใช้หมอนรองใต้เข่า</li>
@@ -758,13 +730,11 @@
                             </ol>
                         </div>
 
-                        <!-- Massage 4 Steps -->
                         <div class="space-y-4 pt-2">
                             <h3 class="font-bold text-teal-900 text-xs sm:text-sm flex items-center gap-1.5 border-b pb-2">
                                 <i class="fa-solid fa-hands-bubbles text-teal-600"></i> ขั้นตอนการนวดหน้าท้อง 4 ท่า
                             </h3>
 
-                            <!-- Step 1 -->
                             <div class="bg-teal-50/60 p-4 rounded-2xl border border-teal-100 space-y-2.5">
                                 <h4 class="font-bold text-teal-950 text-xs flex items-center gap-1.5">
                                     <span class="bg-teal-600 text-white w-5 h-5 rounded-full inline-flex items-center justify-center text-[10px]">1</span> ท่าที่ 1 ทำนวดตามแนวเส้นตรง
@@ -773,11 +743,10 @@
                                     แบ่งแนวหน้าท้องตามยาวจากบนลงล่างห่างจากสะดือ 2 นิ้วมือ ข้างละ 2-3 แนว นำมือสองข้างประสานกัน ใช้นิ้วมือระหว่างข้อที่ 1 และข้อที่ 2 กดหน้าท้องความลึกประมาณ 1 1/2 - 2 นิ้ว แล้ววนตามเข็มนาฬิกาครั้งละ 5 รอบ ตามแนวเส้นตรงที่แบ่งไว้ จากนั้นเลื่อนมือให้ต่อกันกับวงแรก และทำซ้ำเดิมตามแนวที่กำหนดไว้จนครบทุกแนว
                                 </p>
                                 <div class="w-full rounded-xl overflow-hidden border border-teal-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-massage-08').src)">
-                                    <img id="img-massage-08" src="img/08.png" alt="ท่าที่ 1 นวดตามแนวเส้นตรง" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=ท่าที่+1+นวดตามแนวเส้นตรง';">
+                                    <img id="img-massage-08" src="img/08.png" alt="ท่าที่ 1 นวดตามแนวเส้นตรง" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=08.png';">
                                 </div>
                             </div>
 
-                            <!-- Step 2 -->
                             <div class="bg-teal-50/60 p-4 rounded-2xl border border-teal-100 space-y-2.5">
                                 <h4 class="font-bold text-teal-950 text-xs flex items-center gap-1.5">
                                     <span class="bg-teal-600 text-white w-5 h-5 rounded-full inline-flex items-center justify-center text-[10px]">2</span> ท่าที่ 2 ท่าโกยลำไส้
@@ -786,11 +755,10 @@
                                     ประสานมือเข้าด้วยกันตามรูปและใช้บริเวณสันมือนวดแบบรีดตั้งแต่บริเวณกลางสะดือจนถึงหัวเหน่า ทำให้ทั่วหน้าท้อง ประมาณ 10 - 15 ครั้ง
                                 </p>
                                 <div class="w-full rounded-xl overflow-hidden border border-teal-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-massage-09').src)">
-                                    <img id="img-massage-09" src="img/09.png" alt="ท่าที่ 2 ท่าโกยลำไส้" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=ท่าที่+2+ท่าโกยลำไส้';">
+                                    <img id="img-massage-09" src="img/09.png" alt="ท่าที่ 2 ท่าโกยลำไส้" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=09.png';">
                                 </div>
                             </div>
 
-                            <!-- Step 3 -->
                             <div class="bg-teal-50/60 p-4 rounded-2xl border border-teal-100 space-y-2.5">
                                 <h4 class="font-bold text-teal-950 text-xs flex items-center gap-1.5">
                                     <span class="bg-teal-600 text-white w-5 h-5 rounded-full inline-flex items-center justify-center text-[10px]">3</span> ท่าที่ 3 ท่าโยกลำไส้
@@ -799,11 +767,10 @@
                                     ประสานมือตามรูป ใช้ส้นมือทั้งสองข้างนวดดันหน้าท้องด้านใกล้ตัวไปด้านตรงข้าม แล้วใช้ปลายมือโกยหน้าท้องกลับเข้าหาตัวผู้นวด ทำซ้ำให้ทั่วหน้าท้องประมาณ 15 - 20 ครั้ง
                                 </p>
                                 <div class="w-full rounded-xl overflow-hidden border border-teal-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-massage-10').src)">
-                                    <img id="img-massage-10" src="img/10.png" alt="ท่าที่ 3 ท่าโยกลำไส้" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=ท่าที่+3+ท่าโยกลำไส้';">
+                                    <img id="img-massage-10" src="img/10.png" alt="ท่าที่ 3 ท่าโยกลำไส้" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=10.png';">
                                 </div>
                             </div>
 
-                            <!-- Step 4 -->
                             <div class="bg-teal-50/60 p-4 rounded-2xl border border-teal-100 space-y-2.5">
                                 <h4 class="font-bold text-teal-950 text-xs flex items-center gap-1.5">
                                     <span class="bg-teal-600 text-white w-5 h-5 rounded-full inline-flex items-center justify-center text-[10px]">4</span> ท่าที่ 4 ท่านวดตามเข็มนาฬิกา
@@ -812,13 +779,13 @@
                                     ใช้วิธีนวดตามแบบท่าที่ 1 แต่ทิศทางวนตามเข็มนาฬิกาให้วนจากรอบสะดือออกมาด้านนอก ทำให้ทั่วหน้าท้องโดยเน้นลำไส้ใหญ่ข้างลำตัวด้านซ้าย
                                 </p>
                                 <div class="w-full rounded-xl overflow-hidden border border-teal-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-massage-11').src)">
-                                    <img id="img-massage-11" src="img/11.png" alt="ท่าที่ 4 ท่านวดตามเข็มนาฬิกา" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=ท่าที่+4+ท่านวดตามเข็มนาฬิกา';">
+                                    <img id="img-massage-11" src="img/11.png" alt="ท่าที่ 4 ท่านวดตามเข็มนาฬิกา" class="w-full h-auto object-contain rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0d9488/ffffff?text=11.png';">
                                 </div>
                             </div>
-                            <!-- Note Box -->
+
                             <div class="bg-amber-50 p-3.5 rounded-2xl border border-amber-200 text-amber-950 space-y-1.5 text-xs">
                                 <p class="font-bold flex items-center gap-1 text-amber-900">
-                                    <i class="fa-solid fa-circle-exclamation text-amber-600"></i> หมายเหตุสำคัญ:
+                                    <i class="fa-solid fa-circle-exclamation text-amber-600"></i> หมายเหตุ:
                                 </p>
                                 <ul class="list-disc pl-5 space-y-1">
                                     <li>ทุกท่าของการนวดควรกดลึกประมาณ 1 1/2 - 2 นิ้ว</li>
@@ -842,17 +809,12 @@
                         <h2 class="text-base font-bold text-gray-800 mt-1">การฝึกการขับถ่าย</h2>
                     </div>
 
-                    <!-- Intro Box -->
                     <div class="bg-teal-50/70 p-4 rounded-2xl border border-teal-200 text-teal-950 space-y-2">
                         <h3 class="font-bold text-teal-900 text-xs sm:text-sm flex items-center gap-1.5">
                             <i class="fa-solid fa-hand-holding-medical text-teal-600"></i> การนวดกระตุ้นทวารหนักด้วยนิ้วมือ (Digital Rectal Stimulation)
                         </h3>
-                        <p class="text-xs text-gray-700 leading-relaxed">
-                            ทำเวลาเดิมทุกวัน (เช่น หลังอาหารเช้าหรือเย็น 20-30 นาที) ใช้วิธีการกระตุ้นรีเฟล็กซ์เพื่อช่วยให้ลำไส้เกิดการบีบตัวและขับถ่ายได้อย่างเป็นระบบ
-                        </p>
                     </div>
 
-                    <!-- Warning Badge Box -->
                     <div class="bg-red-50 p-4 rounded-2xl border-2 border-red-400 text-red-900 space-y-2 shadow-md">
                         <div class="flex items-center gap-2 font-extrabold text-sm sm:text-base text-red-700">
                             <i class="fa-solid fa-triangle-exclamation text-xl animate-pulse"></i>
@@ -863,11 +825,7 @@
                         </p>
                     </div>
 
-                    <!-- Image 12: 12.png -->
                     <div class="space-y-1">
-                        <p class="font-bold text-teal-900 text-xs flex items-center gap-1">
-                            <i class="fa-solid fa-image text-teal-600"></i> ขั้นตอนและวิธีการนวดกระตุ้นทวารหนักด้วยนิ้วมือ:
-                        </p>
                         <div class="w-full rounded-2xl overflow-hidden border border-teal-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-training-12').src)">
                             <img id="img-training-12" src="img/12.png" alt="การนวดกระตุ้นทวารหนักด้วยนิ้วมือ Digital Rectal Stimulation" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/0d9488/ffffff?text=12.png';">
                         </div>
@@ -876,10 +834,9 @@
                         </p>
                     </div>
 
-                    <!-- Precautions Card -->
                     <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 text-amber-950 space-y-2">
                         <h3 class="font-bold text-amber-900 flex items-center gap-1.5 text-xs sm:text-sm">
-                            <i class="fa-solid fa-shield-cat text-amber-600"></i> ข้อควรระวังในการปฏิบัติ
+                            <i class="fa-solid fa-shield-cat text-amber-600"></i> ข้อควรระวัง
                         </h3>
                         <ul class="list-disc pl-5 space-y-2 text-xs text-amber-950 leading-relaxed font-medium">
                             <li>ในกรณีที่มีริดสีดวงทวารไม่ควรใช้วิธีนี้ จนกว่าจะรักษาหาย</li>
@@ -964,17 +921,6 @@
                         <h2 class="text-base font-bold text-gray-800 mt-1">การเหน็บล้วงด้วยสบู่ / หรือยาเหน็บ</h2>
                     </div>
 
-                    <!-- Intro Box -->
-                    <div class="bg-amber-50/70 p-4 rounded-2xl border border-amber-200 text-amber-950 space-y-2">
-                        <h3 class="font-bold text-amber-900 text-xs sm:text-sm flex items-center gap-1.5">
-                            <i class="fa-solid fa-pills text-amber-600"></i> การเหน็บล้วงด้วยสบู่ / หรือยาเหน็บ
-                        </h3>
-                        <p class="text-xs text-gray-700 leading-relaxed">
-                            ใช้ยาเหน็บกลีเซอรีน หรือแท่งสบู่เหลี่ยมมนสอดเข้าทางทวารหนัก เพื่อกระตุ้นให้ลำไส้เกิดการบีบตัวและขับอุจจาระส่วนปลายออกมา
-                        </p>
-                    </div>
-
-                    <!-- Precautions Card -->
                     <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 text-amber-950 space-y-2">
                         <h3 class="font-bold text-amber-900 flex items-center gap-1.5 text-xs sm:text-sm">
                             <i class="fa-solid fa-shield-cat text-amber-600"></i> ข้อควรระวังก่อนเหน็บยา/สบู่ทางทวารหนัก
@@ -990,11 +936,7 @@
                         </ul>
                     </div>
 
-                    <!-- Image 13: 13.png -->
                     <div class="space-y-1">
-                        <p class="font-bold text-amber-900 text-xs flex items-center gap-1">
-                            <i class="fa-solid fa-image text-amber-600"></i> ข้อควรระวังและวิธีเหน็บยา/สบู่:
-                        </p>
                         <div class="w-full rounded-2xl overflow-hidden border border-amber-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-suppository-13').src)">
                             <img id="img-suppository-13" src="img/13.png" alt="ข้อควรระวังก่อนเหน็บยา/สบู่ทางทวารหนัก" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/d97706/ffffff?text=13.png';">
                         </div>
@@ -1003,7 +945,6 @@
                         </p>
                     </div>
 
-                    <!-- Image 14: 14.png - วิธีการทำสบู่ -->
                     <div class="space-y-1 pt-2 border-t border-amber-100">
                         <p class="font-bold text-amber-900 text-xs flex items-center gap-1">
                             <i class="fa-solid fa-soap text-amber-600"></i> วิธีการทำสบู่:
@@ -1030,22 +971,12 @@
                         <h2 class="text-base font-bold text-gray-800 mt-1">การล้วงอุจจาระ</h2>
                     </div>
 
-                    <!-- Image 15: 15.png -->
                     <div class="space-y-1">
-                        <p class="font-bold text-amber-900 text-xs flex items-center gap-1">
-                            <i class="fa-solid fa-image text-amber-600"></i> ขั้นตอนและวิธีการล้วงอุจจาระแบบง่าย:
-                        </p>
                         <div class="w-full rounded-2xl overflow-hidden border border-amber-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-evacuation-15').src)">
                             <img id="img-evacuation-15" src="img/15.png" alt="การล้วงอุจจาระ วิธีการล้วงอุจจาระแบบง่าย" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/d97706/ffffff?text=15.png';">
                         </div>
                         <p class="text-[10px] text-gray-500 text-center font-medium pt-1">
                             <i class="fa-solid fa-magnifying-glass-plus text-amber-600 mr-1"></i> แตะที่ภาพเพื่อดูขยายเต็มจอ
-                        </p>
-                    </div>
-
-                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
-                        <p class="bg-amber-50 p-3.5 rounded-2xl border border-amber-100 text-amber-950">
-                            สวมถุงมือสะอาด หล่อลื่นด้วยเจล สอดนิ้วเข้าไปในทวารหนักอย่างนุ่มนวลเพื่อกวาดเอาอุจจาระก้อนแข็งที่ติดค้างอยู่ออกมา ทำด้วยความระมัดระวังเพื่อไม่ให้เยื่อบุผนังลำไส้ฉีกขาด
                         </p>
                     </div>
                     <button onclick="switchTab('menu-4')" class="w-full bg-amber-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
@@ -1062,22 +993,12 @@
                         <h2 class="text-base font-bold text-gray-800 mt-1">การใช้ยาสวนทวารหนัก</h2>
                     </div>
 
-                    <!-- Image 16: 16.png -->
                     <div class="space-y-1">
-                        <p class="font-bold text-amber-900 text-xs flex items-center gap-1">
-                            <i class="fa-solid fa-image text-amber-600"></i> ขั้นตอนและวิธีการใช้ยาสวนทวารหนัก:
-                        </p>
                         <div class="w-full rounded-2xl overflow-hidden border border-amber-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-enema-16').src)">
                             <img id="img-enema-16" src="img/16.png" alt="ขั้นตอนและวิธีการใช้ยาสวนทวารหนัก" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/d97706/ffffff?text=16.png';">
                         </div>
                         <p class="text-[10px] text-gray-500 text-center font-medium pt-1">
                             <i class="fa-solid fa-magnifying-glass-plus text-amber-600 mr-1"></i> แตะที่ภาพเพื่อดูขยายเต็มจอ
-                        </p>
-                    </div>
-
-                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
-                        <p class="bg-amber-50 p-3.5 rounded-2xl border border-amber-100 text-amber-950">
-                            ใช้ลูกยางสวนหรือขวดสวนสำเร็จรูปบรรจุสารละลายน้ำเกลือสวนเข้าทวารหนัก เพื่อทำให้อุจจาระนุ่มและขับถ่ายออกมาได้ง่ายขึ้นตามคำแนะนำของบุคลากรทางการแพทย์
                         </p>
                     </div>
                     <button onclick="switchTab('menu-4')" class="w-full bg-amber-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
@@ -1120,7 +1041,7 @@
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <h3 class="font-bold text-red-950 text-xs sm:text-sm truncate">เหตุฉุกเฉิน</h3>
-                                    <p class="text-gray-500 text-xs line-clamp-1">โทรสายด่วนการแพทย์ฉุกเฉิน 1669</p>
+                                    <p class="text-gray-500 text-xs line-clamp-1">ติดต่อสายด่วน 1669</p>
                                 </div>
                             </div>
                             <i class="fa-solid fa-chevron-right text-red-600 text-xs"></i>
@@ -1135,67 +1056,91 @@
 
             <!-- SUB-MENU 5.1 -->
             <div id="tab-sub-5-1" class="tab-content p-4 space-y-4 hidden">
-                <button onclick="switchTab('menu-5')" class="text-red-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
-                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดภาวะฉุกเฉิน
+                <!-- ... existing content ... -->
+            </div>
+
+            <!-- TAB MENU 6: แบบทดสอบประเมินความเข้าใจ (Sub-Menu Center) -->
+            <div id="tab-menu-6" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
                 </button>
-                <div class="bg-white rounded-2xl p-5 shadow-sm border border-red-100 space-y-4">
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 space-y-4">
                     <div class="border-b pb-3">
-                        <h2 class="text-base font-bold text-gray-800 mt-1">Autonomic Dysreflexia (AD)</h2>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">แบบทดสอบประเมินความเข้าใจ</h2>
+                        <p class="text-xs text-gray-500">เลือกทำแบบทดสอบวัดความเข้าใจก่อนเรียนหรือหลังเรียน</p>
                     </div>
 
-                    <!-- Image 17: 17.png -->
-                    <div class="space-y-1">
-                        <p class="font-bold text-red-900 text-xs flex items-center gap-1">
-                            <i class="fa-solid fa-image text-red-600"></i> สาเหตุและสัญญาณเตือนภาวะ Autonomic Dysreflexia (AD):
-                        </p>
-                        <div class="w-full rounded-2xl overflow-hidden border border-red-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-ad-17').src)">
-                            <img id="img-ad-17" src="img/17.png" alt="Autonomic Dysreflexia (AD)" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x800/dc2626/ffffff?text=17.png';">
+                    <div class="space-y-3">
+                        <div onclick="switchTab('pretest')" class="bg-teal-50/60 p-4 rounded-2xl border border-teal-100 active:bg-teal-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3.5 flex-1 overflow-hidden">
+                                <div class="w-12 h-12 rounded-xl bg-teal-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                                    <i class="fa-solid fa-file-pen"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-teal-900 text-sm">แบบทดสอบ Pre-test (ก่อนเรียน)</h3>
+                                    <p class="text-gray-500 text-xs">ทดสอบวัดความรู้พื้นฐานก่อนศึกษาคู่มือ</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-teal-600 text-xs"></i>
                         </div>
-                        <p class="text-[10px] text-gray-500 text-center font-medium pt-1">
-                            <i class="fa-solid fa-magnifying-glass-plus text-red-600 mr-1"></i> แตะที่ภาพเพื่อดูขยายเต็มจอ
-                        </p>
+
+                        <div onclick="switchTab('posttest')" class="bg-emerald-50/60 p-4 rounded-2xl border border-emerald-100 active:bg-emerald-100/80 active:scale-[0.98] transition cursor-pointer flex items-center justify-between group gap-3">
+                            <div class="flex items-center space-x-3.5 flex-1 overflow-hidden">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="font-bold text-emerald-900 text-sm">แบบทดสอบ Post-test (หลังเรียน)</h3>
+                                    <p class="text-gray-500 text-xs">ประเมินผลความเข้าใจหลังศึกษาคู่มือ</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-emerald-600 text-xs"></i>
+                        </div>
                     </div>
 
-                    <div class="space-y-3 text-xs text-gray-700 leading-relaxed">
-                        <p class="bg-red-50 p-3.5 rounded-2xl border border-red-200 text-red-950">
-                            เป็นภาวะฉุกเฉินทางการแพทย์ที่อันตรายมาก มักเกิดในผู้ป่วยบาดเจ็บไขสันหลังระดับ T6 ขึ้นไป ซึ่งสาเหตุอันดับต้นๆ เกิดจาก <strong>"อาการท้องผูก ลำไส้อัดแน่น หรือกระเพาะปัสสาวะเต็ม"</strong>
-                        </p>
-                        <div class="bg-white p-3.5 rounded-xl border border-red-100 space-y-1">
-                            <h4 class="font-bold text-red-900 text-xs">สัญญาณเตือนสำคัญ:</h4>
-                            <ul class="list-disc pl-5 text-xs text-gray-700 space-y-1">
-                                <li>ปวดศีรษะรุนแรงและฉับพลัน</li>
-                                <li>ความดันโลหิตสูงขึ้นผิดปกติ</li>
-                                <li>เหงื่อออกมากบริเวณใบหน้าและลำคอ เหนือระดับที่บาดเจ็บ</li>
-                                <li>ผิวหนังแดงและมีผื่น ขนลุก</li>
-                            </ul>
-                        </div>
+                    <div class="pt-2">
+                        <button onclick="switchTab('home')" class="w-full px-4 py-2.5 bg-gray-100 text-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-200 active:scale-95 transition">กลับหน้าหลัก</button>
                     </div>
-                    <button onclick="switchTab('menu-5')" class="w-full bg-red-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
                 </div>
             </div>
 
-            <!-- TAB MENU 6: แบบทดสอบ -->
-            <div id="tab-menu-6" class="tab-content p-4 space-y-4 hidden">
+            <!-- TAB PRE-TEST (แบบทดสอบก่อนเรียน) -->
+            <div id="tab-pretest" class="tab-content p-4 space-y-4 hidden">
                 <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
                     <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
                 </button>
                 
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-teal-100 space-y-4">
                     <div class="border-b pb-3">
-                        <h2 class="text-base font-bold text-gray-800 mt-1">แบบทดสอบประเมินความเข้าใจ</h2>
-                        <p class="text-xs text-gray-500">ตอบคำถามถูก/ผิด จำนวน 5 ข้อ เพื่อประเมินความรู้ในการดูแลตนเอง</p>
+                        <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Pre-Test</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">แบบทดสอบ Pre-test (ก่อนเรียน)</h2>
+                        <p class="text-xs text-gray-500">ทดสอบความรู้ความเข้าใจก่อนเริ่มศึกษาคู่มือดูแลระบบขับถ่าย</p>
                     </div>
 
-                    <form id="quiz-form" onsubmit="submitQuiz(event)" class="space-y-4">
+                    <form id="pretest-quiz-form" onsubmit="submitQuiz(event, 'Pre-test')" class="space-y-4">
+                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 space-y-3">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">ข้อมูลผู้ทำแบบทดสอบ <span class="text-red-500">*</span></label>
+                                <select id="pretest-role" required class="w-full text-xs p-2.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-teal-500 font-medium">
+                                    <option value="ผู้ป่วยบาดเจ็บไขสันหลัง">ผู้ป่วยบาดเจ็บไขสันหลัง</option>
+                                    <option value="ผู้ดูแลผู้ป่วย">ผู้ดูแลผู้ป่วย</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">ชื่อผู้ทำแบบทดสอบ (ไม่ระบุนามได้)</label>
+                                <input type="text" id="pretest-name" placeholder="เช่น คุณสมชาย หรือ ผู้ป่วย" class="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-teal-500">
+                            </div>
+                        </div>
+
                         <!-- Q1 -->
                         <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
                             <p class="font-bold text-xs sm:text-sm text-gray-800">1. การนวดหน้าท้องกระทำทันทีหลังรับประทานอาหารเสร็จเรียบร้อยเพื่อช่วยกระตุ้นให้อาหารเคลื่อนตัวได้เร็วยิ่งขึ้น</p>
                             <div class="flex gap-3 text-xs">
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q1" value="true" required class="accent-teal-600"> ถูก
+                                    <input type="radio" name="pre_q1" value="true" required class="accent-teal-600"> ถูก
                                 </label>
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q1" value="false" class="accent-teal-600"> ผิด
+                                    <input type="radio" name="pre_q1" value="false" class="accent-teal-600"> ผิด
                                 </label>
                             </div>
                         </div>
@@ -1205,10 +1150,10 @@
                             <p class="font-bold text-xs sm:text-sm text-gray-800">2. การฝึกขับถ่ายควรทำเป็นเวลาเดียวกันทุกวัน เพื่อฝึกนาฬิกาชีวิตของลำไส้</p>
                             <div class="flex gap-3 text-xs">
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q2" value="true" required class="accent-teal-600"> ถูก
+                                    <input type="radio" name="pre_q2" value="true" required class="accent-teal-600"> ถูก
                                 </label>
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q2" value="false" class="accent-teal-600"> ผิด
+                                    <input type="radio" name="pre_q2" value="false" class="accent-teal-600"> ผิด
                                 </label>
                             </div>
                         </div>
@@ -1218,10 +1163,10 @@
                             <p class="font-bold text-xs sm:text-sm text-gray-800">3. อาการเหงื่อออกมาก ความดันสูง ปวดศรีษะขณะท้องผูก อาจเป็นสัญญาณอันตราย (Autonomic Dysreflexia)</p>
                             <div class="flex gap-3 text-xs">
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q3" value="true" required class="accent-teal-600"> ถูก
+                                    <input type="radio" name="pre_q3" value="true" required class="accent-teal-600"> ถูก
                                 </label>
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q3" value="false" class="accent-teal-600"> ผิด
+                                    <input type="radio" name="pre_q3" value="false" class="accent-teal-600"> ผิด
                                 </label>
                             </div>
                         </div>
@@ -1231,10 +1176,10 @@
                             <p class="font-bold text-xs sm:text-sm text-gray-800">4. การนวดกระตุ้นทวารหนักด้วยนิ้วมือ (Digital Rectal Stimulation) สามารถทำได้กับผู้ป่วยบาดเจ็บไขสันหลังทุกระดับอย่างปลอดภัย</p>
                             <div class="flex gap-3 text-xs">
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q4" value="true" required class="accent-teal-600"> ถูก
+                                    <input type="radio" name="pre_q4" value="true" required class="accent-teal-600"> ถูก
                                 </label>
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q4" value="false" class="accent-teal-600"> ผิด
+                                    <input type="radio" name="pre_q4" value="false" class="accent-teal-600"> ผิด
                                 </label>
                             </div>
                         </div>
@@ -1244,74 +1189,287 @@
                             <p class="font-bold text-xs sm:text-sm text-gray-800">5. เน้นการรับประทานอาหารที่มีกากใย 25-30 กรัมต่อวันและดื่มน้ำอย่างน้อย 1.5-2 ลิตร/วัน ช่วยป้องกันท้องผูก</p>
                             <div class="flex gap-3 text-xs">
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q5" value="true" required class="accent-teal-600"> ถูก
+                                    <input type="radio" name="pre_q5" value="true" required class="accent-teal-600"> ถูก
                                 </label>
                                 <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-teal-50 transition">
-                                    <input type="radio" name="q5" value="false" class="accent-teal-600"> ผิด
+                                    <input type="radio" name="pre_q5" value="false" class="accent-teal-600"> ผิด
                                 </label>
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl shadow-md active:scale-95 transition text-xs sm:text-sm">
-                            ส่งแบบทดสอบ
+                        <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 rounded-xl shadow-md active:scale-95 transition text-xs sm:text-sm flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-paper-plane"></i> บันทึกและส่งแบบทดสอบ Pre-test
                         </button>
                     </form>
 
-                    <!-- Quiz Result Modal/Box -->
-                    <div id="quiz-result" class="hidden p-4 rounded-2xl bg-teal-50 border border-teal-200 space-y-3">
+                    <div id="pretest-result" class="hidden p-4 rounded-2xl bg-teal-50 border border-teal-200 space-y-3">
                         <div class="text-center">
-                            <span class="text-xs font-bold text-teal-800 uppercase">ผลการประเมิน</span>
-                            <h3 id="quiz-score" class="text-2xl font-bold text-teal-900 mt-1">คะแนน: 0/5</h3>
-                            <p id="quiz-level" class="text-xs font-bold text-teal-700 mt-0.5">ระดับความเข้าใจ: -</p>
+                            <span class="text-xs font-bold text-teal-800 uppercase">ผลการทดสอบ (Pre-test)</span>
+                            <h3 id="pretest-score" class="text-2xl font-bold text-teal-900 mt-1">คะแนน: 0/5</h3>
+                            <p id="pretest-level" class="text-xs font-bold text-teal-700 mt-0.5">ระดับความเข้าใจ: -</p>
                         </div>
                         <div class="bg-white p-3 rounded-xl border border-teal-100 text-xs text-gray-700 space-y-1">
                             <p class="font-bold text-teal-900">คำแนะนำเฉพาะคุณ:</p>
-                            <p id="quiz-advice" class="leading-relaxed text-gray-600">-</p>
+                            <p id="pretest-advice" class="leading-relaxed text-gray-600">-</p>
+                        </div>
+                        <div class="text-[11px] text-emerald-700 bg-emerald-50 p-2 rounded-xl border border-emerald-200 text-center font-medium">
+                            <i class="fa-solid fa-check-circle mr-1"></i> บันทึกผล Pre-test ลงระบบเรียบร้อยแล้ว
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- TAB MENU 7: แบบประเมินความพึงพอใจ -->
-            <div id="tab-menu-7" class="tab-content p-4 space-y-4 hidden">
-                <button onclick="switchTab('home')" class="text-teal-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+            <!-- TAB POST-TEST (แบบทดสอบหลังเรียน) -->
+            <div id="tab-posttest" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-emerald-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
                     <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
                 </button>
-                <div class="bg-white rounded-2xl p-5 shadow-sm border border-amber-100 space-y-4">
+                
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-emerald-100 space-y-4">
+                    <div class="border-b pb-3">
+                        <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Post-Test</span>
+                        <h2 class="text-base font-bold text-gray-800 mt-1">แบบทดสอบ Post-test (หลังเรียน)</h2>
+                        <p class="text-xs text-gray-500">ประเมินผลสัมฤทธิ์และความเข้าใจหลังศึกษาคู่มือการดูแล</p>
+                    </div>
+
+                    <form id="posttest-quiz-form" onsubmit="submitQuiz(event, 'Post-test')" class="space-y-4">
+                        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 space-y-3">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">ข้อมูลผู้ทำแบบทดสอบ <span class="text-red-500">*</span></label>
+                                <select id="posttest-role" required class="w-full text-xs p-2.5 rounded-xl border border-slate-200 bg-white focus:outline-none focus:border-emerald-500 font-medium">
+                                    <option value="ผู้ป่วยบาดเจ็บไขสันหลัง">ผู้ป่วยบาดเจ็บไขสันหลัง</option>
+                                    <option value="ผู้ดูแลผู้ป่วย">ผู้ดูแลผู้ป่วย</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">ชื่อผู้ทำแบบทดสอบ (ไม่ระบุนามได้)</label>
+                                <input type="text" id="posttest-name" placeholder="เช่น คุณสมชาย หรือ ผู้ป่วย" class="w-full text-xs p-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500">
+                            </div>
+                        </div>
+
+                        <!-- Q1 -->
+                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                            <p class="font-bold text-xs sm:text-sm text-gray-800">1. การนวดหน้าท้องกระทำทันทีหลังรับประทานอาหารเสร็จเรียบร้อยเพื่อช่วยกระตุ้นให้อาหารเคลื่อนตัวได้เร็วยิ่งขึ้น</p>
+                            <div class="flex gap-3 text-xs">
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q1" value="true" required class="accent-emerald-600"> ถูก
+                                </label>
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q1" value="false" class="accent-emerald-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                            <p class="font-bold text-xs sm:text-sm text-gray-800">2. การฝึกขับถ่ายควรทำเป็นเวลาเดียวกันทุกวัน เพื่อฝึกนาฬิกาชีวิตของลำไส้</p>
+                            <div class="flex gap-3 text-xs">
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q2" value="true" required class="accent-emerald-600"> ถูก
+                                </label>
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q2" value="false" class="accent-emerald-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                            <p class="font-bold text-xs sm:text-sm text-gray-800">3. อาการเหงื่อออกมาก ความดันสูง ปวดศรีษะขณะท้องผูก อาจเป็นสัญญาณอันตราย (Autonomic Dysreflexia)</p>
+                            <div class="flex gap-3 text-xs">
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q3" value="true" required class="accent-emerald-600"> ถูก
+                                </label>
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q3" value="false" class="accent-emerald-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                            <p class="font-bold text-xs sm:text-sm text-gray-800">4. การนวดกระตุ้นทวารหนักด้วยนิ้วมือ (Digital Rectal Stimulation) สามารถทำได้กับผู้ป่วยบาดเจ็บไขสันหลังทุกระดับอย่างปลอดภัย</p>
+                            <div class="flex gap-3 text-xs">
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q4" value="true" required class="accent-emerald-600"> ถูก
+                                </label>
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q4" value="false" class="accent-emerald-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                            <p class="font-bold text-xs sm:text-sm text-gray-800">5. เน้นการรับประทานอาหารที่มีกากใย 25-30 กรัมต่อวันและดื่มน้ำอย่างน้อย 1.5-2 ลิตร/วัน ช่วยป้องกันท้องผูก</p>
+                            <div class="flex gap-3 text-xs">
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q5" value="true" required class="accent-emerald-600"> ถูก
+                                </label>
+                                <label class="flex-1 flex items-center justify-center gap-1.5 p-2 rounded-xl bg-white border border-slate-200 cursor-pointer hover:bg-emerald-50 transition">
+                                    <input type="radio" name="post_q5" value="false" class="accent-emerald-600"> ผิด
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md active:scale-95 transition text-xs sm:text-sm flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-paper-plane"></i> บันทึกและส่งแบบทดสอบ Post-test
+                        </button>
+                    </form>
+
+                    <div id="posttest-result" class="hidden p-4 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-3">
+                        <div class="text-center">
+                            <span class="text-xs font-bold text-emerald-800 uppercase">ผลการทดสอบ (Post-test)</span>
+                            <h3 id="posttest-score" class="text-2xl font-bold text-emerald-900 mt-1">คะแนน: 0/5</h3>
+                            <p id="posttest-level" class="text-xs font-bold text-emerald-700 mt-0.5">ระดับความเข้าใจ: -</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-emerald-100 text-xs text-gray-700 space-y-1">
+                            <p class="font-bold text-emerald-900">คำแนะนำเฉพาะคุณ:</p>
+                            <p id="posttest-advice" class="leading-relaxed text-gray-600">-</p>
+                        </div>
+                        <div class="text-[11px] text-emerald-700 bg-emerald-50 p-2 rounded-xl border border-emerald-200 text-center font-medium">
+                            <i class="fa-solid fa-check-circle mr-1"></i> บันทึกผล Post-test ลงระบบเรียบร้อยแล้ว
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB MENU 7: แบบประเมินความพึงพอใจ (ดาว 1-5 โทนสีเขียว) -->
+            <div id="tab-menu-7" class="tab-content p-4 space-y-4 hidden">
+                <button onclick="switchTab('home')" class="text-emerald-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-emerald-100 space-y-4">
                     <div class="border-b pb-3">
                         <h2 class="text-base font-bold text-gray-800 mt-1">แบบประเมินความพึงพอใจ</h2>
-                        <p class="text-xs text-gray-500">กรุณาให้คะแนนความพึงพอใจต่อการใช้งานแอปพลิเคชัน Bowel Buddy</p>
+                        <p class="text-xs text-gray-500">ให้คะแนนความพึงพอใจดาว 1 - 5 ดาวในแต่ละหัวข้อ</p>
                     </div>
 
                     <form id="satisfaction-form" onsubmit="submitSatisfaction(event)" class="space-y-4">
-                        <div class="text-center py-2 space-y-2">
-                            <label class="block text-xs font-bold text-gray-700">ระดับความพึงพอใจโดยรวม</label>
-                            <div class="flex justify-center gap-2 text-2xl text-amber-400 cursor-pointer" id="star-rating">
-                                <i class="fa-solid fa-star transition active:scale-125" onclick="setRating(1)"></i>
-                                <i class="fa-solid fa-star transition active:scale-125" onclick="setRating(2)"></i>
-                                <i class="fa-solid fa-star transition active:scale-125" onclick="setRating(3)"></i>
-                                <i class="fa-solid fa-star transition active:scale-125" onclick="setRating(4)"></i>
-                                <i class="fa-solid fa-star transition active:scale-125" onclick="setRating(5)"></i>
+                        
+                        <!-- Section: ข้อมูลทั่วไป -->
+                        <div class="bg-emerald-50/60 p-4 rounded-2xl border border-emerald-200/80 space-y-3">
+                            <h3 class="font-bold text-xs text-emerald-900 flex items-center gap-1.5">
+                                <i class="fa-solid fa-user text-emerald-600"></i> ข้อมูลทั่วไปของผู้ประเมิน
+                            </h3>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">สถานะของผู้ประเมิน <span class="text-red-500">*</span></label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <label class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-emerald-200 cursor-pointer hover:bg-emerald-100/40 active:scale-[0.98] transition">
+                                        <input type="radio" name="sat-role" value="ผู้ป่วยบาดเจ็บไขสันหลัง" checked class="accent-emerald-600">
+                                        <span class="text-xs text-gray-800 font-medium">ผู้ป่วยบาดเจ็บไขสันหลัง</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2.5 bg-white rounded-xl border border-emerald-200 cursor-pointer hover:bg-emerald-100/40 active:scale-[0.98] transition">
+                                        <input type="radio" name="sat-role" value="ผู้ดูแลผู้ป่วย" class="accent-emerald-600">
+                                        <span class="text-xs text-gray-800 font-medium">ผู้ดูแลผู้ป่วย</span>
+                                    </label>
+                                </div>
                             </div>
-                            <p id="rating-text" class="text-xs font-bold text-amber-600">ดีมาก (5/5)</p>
+
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 mb-1">ชื่อผู้ประเมิน (ไม่ระบุนามได้)</label>
+                                <input type="text" id="sat-name" placeholder="เช่น คุณสมชาย หรือ ผู้ป่วย" class="w-full text-xs p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 bg-white">
+                            </div>
                         </div>
 
-                        <div>
-                            <label class="block text-xs font-bold text-gray-700 mb-1">ชื่อผู้ประเมิน (ไม่ระบุนามได้)</label>
-                            <input type="text" id="sat-name" placeholder="เช่น คุณสมชาย หรือ ผู้ป่วย" class="w-full text-xs p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-amber-500">
+                        <!-- 1-5 Yellow Star Rating Items for each Question -->
+                        <div class="space-y-3 pt-1">
+                            <h3 class="font-bold text-xs text-gray-800 flex items-center gap-1.5 border-b pb-2">
+                                <i class="fa-solid fa-star text-amber-400"></i> ให้คะแนนประเมิน ( 1 ดาว = น้อยที่สุด, 5 ดาว = มากที่สุด )
+                            </h3>
+
+                            <!-- Question 1 -->
+                            <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <p class="font-bold text-xs sm:text-sm text-gray-800">1. ฟังก์ชันคำแนะนำการให้ข้อมูลที่ชัดเจน เข้าใจง่าย และนำไปใช้ได้จริง</p>
+                                    <span id="sat-q1-label" class="text-xs font-bold text-amber-500 shrink-0 ml-1">5 ดาว</span>
+                                </div>
+                                <div class="flex justify-center items-center gap-2 pt-1" id="star-q1-container">
+                                    <i onclick="setQuestionStar(1, 1)" class="q1-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(1, 2)" class="q1-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(1, 3)" class="q1-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(1, 4)" class="q1-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(1, 5)" class="q1-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                </div>
+                                <input type="hidden" id="sat-q1" value="5">
+                            </div>
+
+                            <!-- Question 2 -->
+                            <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <p class="font-bold text-xs sm:text-sm text-gray-800">2. แอปพลิเคชันใช้งานง่าย สะดวกไม่ซับซ้อน</p>
+                                    <span id="sat-q2-label" class="text-xs font-bold text-amber-500 shrink-0 ml-1">5 ดาว</span>
+                                </div>
+                                <div class="flex justify-center items-center gap-2 pt-1" id="star-q2-container">
+                                    <i onclick="setQuestionStar(2, 1)" class="q2-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(2, 2)" class="q2-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(2, 3)" class="q2-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(2, 4)" class="q2-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(2, 5)" class="q2-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                </div>
+                                <input type="hidden" id="sat-q2" value="5">
+                            </div>
+
+                            <!-- Question 3 -->
+                            <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <p class="font-bold text-xs sm:text-sm text-gray-800">3. ความพึงพอใจในภาพรวมต่อการใช้งานแอปพลิเคชัน</p>
+                                    <span id="sat-q3-label" class="text-xs font-bold text-amber-500 shrink-0 ml-1">5 ดาว</span>
+                                </div>
+                                <div class="flex justify-center items-center gap-2 pt-1" id="star-q3-container">
+                                    <i onclick="setQuestionStar(3, 1)" class="q3-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(3, 2)" class="q3-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(3, 3)" class="q3-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(3, 4)" class="q3-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(3, 5)" class="q3-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                </div>
+                                <input type="hidden" id="sat-q3" value="5">
+                            </div>
+
+                            <!-- Question 4 -->
+                            <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <p class="font-bold text-xs sm:text-sm text-gray-800">4. แอปพลิเคชันช่วยเพิ่มประสิทธิภาพในการดูแลผู้ป่วย</p>
+                                    <span id="sat-q4-label" class="text-xs font-bold text-amber-500 shrink-0 ml-1">5 ดาว</span>
+                                </div>
+                                <div class="flex justify-center items-center gap-2 pt-1" id="star-q4-container">
+                                    <i onclick="setQuestionStar(4, 1)" class="q4-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(4, 2)" class="q4-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(4, 3)" class="q4-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(4, 4)" class="q4-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(4, 5)" class="q4-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                </div>
+                                <input type="hidden" id="sat-q4" value="5">
+                            </div>
+
+                            <!-- Question 5 -->
+                            <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <p class="font-bold text-xs sm:text-sm text-gray-800">5. ท่านสามารถนำความรู้จากแอปไปใช้ในการปฏิบัติงานจริงได้</p>
+                                    <span id="sat-q5-label" class="text-xs font-bold text-amber-500 shrink-0 ml-1">5 ดาว</span>
+                                </div>
+                                <div class="flex justify-center items-center gap-2 pt-1" id="star-q5-container">
+                                    <i onclick="setQuestionStar(5, 1)" class="q5-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(5, 2)" class="q5-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(5, 3)" class="q5-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(5, 4)" class="q5-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                    <i onclick="setQuestionStar(5, 5)" class="q5-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125"></i>
+                                </div>
+                                <input type="hidden" id="sat-q5" value="5">
+                            </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-gray-700 mb-1">ข้อเสนอแนะเพิ่มเติม</label>
-                            <textarea id="sat-comment" rows="3" placeholder="พิมพ์ข้อเสนอแนะที่นี่..." class="w-full text-xs p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-amber-500"></textarea>
+                            <textarea id="sat-comment" rows="3" placeholder="พิมพ์ข้อเสนอแนะที่นี่..." class="w-full text-xs p-3 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-500 bg-white"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 rounded-xl shadow-md active:scale-95 transition text-xs sm:text-sm">
-                            ส่งแบบประเมิน
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md active:scale-95 transition text-xs sm:text-sm flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-paper-plane"></i> ส่งแบบประเมินความพึงพอใจ
                         </button>
                     </form>
 
-                    <div id="sat-success" class="hidden p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs text-center font-bold">
+                    <div id="sat-success" class="hidden p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs text-center font-bold">
                         <i class="fa-solid fa-circle-check mr-1"></i> บันทึกแบบประเมินความพึงพอใจเรียบร้อยแล้ว ขอบคุณครับ!
                     </div>
                 </div>
@@ -1356,7 +1514,7 @@
                         <div class="border-b pb-3 flex justify-between items-center">
                             <div>
                                 <h2 class="text-base font-bold text-gray-800">ระบบหลังบ้าน (Admin)</h2>
-                                <p class="text-xs text-gray-500">ผลการประเมินความพึงพอใจทั้งหมด</p>
+                                <p class="text-xs text-gray-500">รายงานแบบประเมินและแบบทดสอบ</p>
                             </div>
                             <button onclick="adminLogout()" class="text-xs bg-red-50 text-red-600 px-3 py-1.5 rounded-xl border border-red-200 font-semibold active:scale-95 transition">
                                 ออกจากระบบ
@@ -1366,14 +1524,14 @@
                         <!-- Stats Summary Card -->
                         <div class="grid grid-cols-2 gap-3">
                             <div class="bg-amber-50 p-3.5 rounded-2xl border border-amber-200 text-center">
-                                <span class="text-[11px] font-bold text-amber-800">คะแนนเฉลี่ย</span>
+                                <span class="text-[11px] font-bold text-amber-800">คะแนนประเมินเฉลี่ย</span>
                                 <h3 id="admin-avg-rating" class="text-2xl font-bold text-amber-900 mt-0.5">0.0</h3>
-                                <p class="text-[10px] text-amber-600">เต็ม 5.0</p>
+                                <p class="text-[10px] text-amber-600">เฉลี่ย 5 ข้อ (เต็ม 5.0)</p>
                             </div>
                             <div class="bg-teal-50 p-3.5 rounded-2xl border border-teal-200 text-center">
-                                <span class="text-[11px] font-bold text-teal-800">ผู้ประเมินทั้งหมด</span>
+                                <span class="text-[11px] font-bold text-teal-800">จำนวนการส่งประเมิน</span>
                                 <h3 id="admin-total-reviews" class="text-2xl font-bold text-teal-900 mt-0.5">0</h3>
-                                <p class="text-[10px] text-teal-600">คน</p>
+                                <p class="text-[10px] text-teal-600">รายการ</p>
                             </div>
                         </div>
 
@@ -1405,7 +1563,7 @@
             </button>
             <button onclick="switchTab('menu-7')" class="nav-btn flex flex-col items-center gap-1 text-slate-400 active:scale-95 transition" id="nav-satisfaction">
                 <i class="fa-solid fa-star text-lg"></i>
-                <span class="text-[10px] font-medium">ประเมินผล</span>
+                <span class="text-[10px] font-medium">ประเมิน</span>
             </button>
             <button onclick="switchTab('admin')" class="nav-btn flex flex-col items-center gap-1 text-slate-400 active:scale-95 transition" id="nav-admin">
                 <i class="fa-solid fa-user-shield text-lg"></i>
@@ -1431,7 +1589,7 @@
                 <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold shadow-inner">
                     <i class="fa-solid fa-mobile-screen-button"></i>
                 </div>
-                <h3 class="font-bold text-gray-800 text-base">วิธีติดตั้ง Bowel Buddy</h3>
+                <h3 class="font-bold text-gray-800 text-base">วิธีติดตั้ง Bowel Budy</h3>
                 <p class="text-xs text-gray-500 leading-relaxed">เพิ่มแอปพลิเคชันลงบนหน้าจอโฮมมือถือเพื่อเข้าใช้งานอย่างรวดเร็ว</p>
             </div>
 
@@ -1465,20 +1623,17 @@
     <!-- Emergency Call Modal Popup -->
     <div id="emergency-modal" class="fixed inset-0 z-50 bg-black/60 hidden flex items-center justify-center p-4 backdrop-blur-sm animate-fadeIn">
         <div class="bg-white rounded-[28px] p-6 max-w-xs w-full text-center space-y-5 shadow-2xl relative">
-            <!-- Icon Container -->
             <div class="w-20 h-20 bg-red-100/80 rounded-full flex items-center justify-center mx-auto shadow-inner">
                 <div class="w-10 h-10 text-red-600 text-2xl flex items-center justify-center transform -scale-x-100">
                     <i class="fa-solid fa-phone"></i>
                 </div>
             </div>
 
-            <!-- Header Text -->
             <div class="space-y-1">
                 <h3 class="font-bold text-gray-900 text-lg sm:text-xl tracking-tight">ติดต่อสายด่วนฉุกเฉิน</h3>
                 <p class="text-xs text-gray-400 font-light">กดปุ่มด้านล่างเพื่อทำการโทรออก</p>
             </div>
 
-            <!-- Action Buttons -->
             <div class="space-y-2.5 pt-1">
                 <a href="tel:1669" class="w-full bg-red-600 hover:bg-red-700 active:scale-98 text-white font-semibold py-3.5 px-4 rounded-2xl shadow-lg transition flex items-center justify-center gap-2.5 text-xs sm:text-sm">
                     <i class="fa-solid fa-phone text-sm"></i>
@@ -1499,7 +1654,7 @@
             </div>
             <div class="space-y-1">
                 <h3 class="font-bold text-gray-800 text-base">ยืนยันการล้างข้อมูล</h3>
-                <p class="text-xs text-gray-500 leading-relaxed">คุณต้องการล้างข้อมูลการประเมินความพึงพอใจทั้งหมดในฐานข้อมูลและเครื่องใช่หรือไม่?</p>
+                <p class="text-xs text-gray-500 leading-relaxed">คุณต้องการล้างข้อมูลการประเมินความพึงพอใจและแบบทดสอบทั้งหมดในฐานข้อมูลและเครื่องใช่หรือไม่?</p>
             </div>
             <div class="flex gap-2 pt-1">
                 <button onclick="closeClearConfirmModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2.5 rounded-xl text-xs active:scale-95 transition">
@@ -1514,9 +1669,9 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        const GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycby2UFftWALK7i1XQVYdp9uA-kmwHpNNpKYdQXhTN8lN1t2P4mciG6dyFy5RprHDoqeH/exec";
-        let currentRating = 5;
+        const GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbz_ZwVu2cTIUdRXibmaRCVa1R_sr2A8FsjGR_OOzUDbmS-F7jExJodJfnb1PuunuVWH/exec";
         let isAdminLoggedIn = false;
+        let pendingAlertCallback = null;
 
         function switchTab(tabId) {
             const tabs = document.querySelectorAll('.tab-content');
@@ -1528,19 +1683,181 @@
                 document.querySelector('main').scrollTop = 0;
             }
 
-            // Update active navigation bar icons
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-teal-600');
+                btn.classList.remove('text-teal-600', 'text-emerald-600');
                 btn.classList.add('text-slate-400');
             });
 
             if (tabId === 'home') document.getElementById('nav-home')?.classList.replace('text-slate-400', 'text-teal-600');
-            if (tabId === 'menu-6') document.getElementById('nav-quiz')?.classList.replace('text-slate-400', 'text-teal-600');
-            if (tabId === 'menu-7') document.getElementById('nav-satisfaction')?.classList.replace('text-slate-400', 'text-teal-600');
+            if (tabId === 'menu-6' || tabId === 'pretest') document.getElementById('nav-quiz')?.classList.replace('text-slate-400', 'text-teal-600');
+            if (tabId === 'posttest') document.getElementById('nav-posttest')?.classList.replace('text-slate-400', 'text-emerald-600');
+            if (tabId === 'menu-7') document.getElementById('nav-satisfaction')?.classList.replace('text-slate-400', 'text-emerald-600');
             if (tabId === 'admin') {
                 document.getElementById('nav-admin')?.classList.replace('text-slate-400', 'text-teal-600');
                 checkAdminState();
             }
+        }
+
+        function setQuestionStar(questionNum, score) {
+            document.getElementById(`sat-q${questionNum}`).value = score;
+            const label = document.getElementById(`sat-q${questionNum}-label`);
+            if (label) label.innerText = `${score} ดาว`;
+
+            const stars = document.querySelectorAll(`.q${questionNum}-star`);
+            stars.forEach((star, idx) => {
+                if (idx < score) {
+                    star.className = `q${questionNum}-star fa-solid fa-star text-2xl text-amber-400 cursor-pointer transition active:scale-125`;
+                } else {
+                    star.className = `q${questionNum}-star fa-solid fa-star text-2xl text-slate-300 cursor-pointer transition active:scale-125`;
+                }
+            });
+        }
+
+        async function submitQuiz(e, testType) {
+            e.preventDefault();
+            let role, name, q1, q2, q3, q4, q5, resultBox, scoreEl, levelEl, adviceEl;
+
+            if (testType === 'Pre-test') {
+                role = document.getElementById('pretest-role').value;
+                name = document.getElementById('pretest-name').value.trim() || 'ผู้ใช้งานทั่วไป';
+                q1 = document.querySelector('input[name="pre_q1"]:checked')?.value;
+                q2 = document.querySelector('input[name="pre_q2"]:checked')?.value;
+                q3 = document.querySelector('input[name="pre_q3"]:checked')?.value;
+                q4 = document.querySelector('input[name="pre_q4"]:checked')?.value;
+                q5 = document.querySelector('input[name="pre_q5"]:checked')?.value;
+                resultBox = document.getElementById('pretest-result');
+                scoreEl = document.getElementById('pretest-score');
+                levelEl = document.getElementById('pretest-level');
+                adviceEl = document.getElementById('pretest-advice');
+            } else {
+                role = document.getElementById('posttest-role').value;
+                name = document.getElementById('posttest-name').value.trim() || 'ผู้ใช้งานทั่วไป';
+                q1 = document.querySelector('input[name="post_q1"]:checked')?.value;
+                q2 = document.querySelector('input[name="post_q2"]:checked')?.value;
+                q3 = document.querySelector('input[name="post_q3"]:checked')?.value;
+                q4 = document.querySelector('input[name="post_q4"]:checked')?.value;
+                q5 = document.querySelector('input[name="post_q5"]:checked')?.value;
+                resultBox = document.getElementById('posttest-result');
+                scoreEl = document.getElementById('posttest-score');
+                levelEl = document.getElementById('posttest-level');
+                adviceEl = document.getElementById('posttest-advice');
+            }
+
+            let s1 = (q1 === 'false') ? 1 : 0;
+            let s2 = (q2 === 'true') ? 1 : 0;
+            let s3 = (q3 === 'true') ? 1 : 0;
+            let s4 = (q4 === 'false') ? 1 : 0;
+            let s5 = (q5 === 'true') ? 1 : 0;
+            let score = s1 + s2 + s3 + s4 + s5;
+
+            scoreEl.innerText = `คะแนน: ${score}/5`;
+            resultBox.classList.remove('hidden');
+
+            if (score === 5) {
+                levelEl.innerText = "ระดับความเข้าใจ: ดีเยี่ยม (100%)";
+                adviceEl.innerText = "คุณมีความเข้าใจเกี่ยวกับการดูแลระบบขับถ่ายอย่างถูกต้อง ยอดเยี่ยมมากครับ! ปฏิบัติตามแนวทางนี้สม่ำเสมอเพื่อสุขภาพลำไส้ที่ดี";
+            } else if (score >= 3) {
+                levelEl.innerText = "ระดับความเข้าใจ: ปานกลาง";
+                adviceEl.innerText = "คุณมีความเข้าใจในระดับดี แนะนำให้ทบทวนความรู้เพิ่มเติมในหมวดการนวดหน้าท้องและการเฝ้าระวังภาวะฉุกเฉินเพิ่มเติมครับ";
+            } else {
+                levelEl.innerText = "ระดับความเข้าใจ: ควรศึกษาเพิ่มเติม";
+                adviceEl.innerText = "แนะนำให้ศึกษาคู่มือหมวดต่างๆ อีกครั้งเพื่อการดูแลตนเองที่ถูกต้องและปลอดภัยครับ";
+            }
+
+            const quizPayload = {
+                type: 'quiz',
+                testType: testType,
+                role: role,
+                name: name,
+                q1: q1,
+                s1: s1,
+                q2: q2,
+                s2: s2,
+                q3: q3,
+                s3: s3,
+                q4: q4,
+                s4: s4,
+                q5: q5,
+                s5: s5,
+                score: score,
+                date: new Date().toLocaleString('th-TH')
+            };
+
+            let quizzes = JSON.parse(localStorage.getItem('bowel_quizzes') || '[]');
+            quizzes.push(quizPayload);
+            localStorage.setItem('bowel_quizzes', JSON.stringify(quizzes));
+
+            if (GOOGLE_SHEET_API_URL) {
+                try {
+                    await fetch(GOOGLE_SHEET_API_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(quizPayload)
+                    });
+                } catch (err) {
+                    console.log('Failed to post quiz to Google Sheets:', err);
+                }
+            }
+
+            alertCustom(`บันทึกแบบทดสอบ ${testType} เรียบร้อยแล้ว`, () => {
+                location.reload();
+            });
+        }
+
+        /* Submit Satisfaction Survey with 1-5 Star Ratings */
+        async function submitSatisfaction(e) {
+            e.preventDefault();
+            const role = document.querySelector('input[name="sat-role"]:checked')?.value || 'ผู้ป่วยบาดเจ็บไขสันหลัง';
+            const name = document.getElementById('sat-name').value.trim() || 'ผู้ใช้งานทั่วไป';
+            const comment = document.getElementById('sat-comment').value.trim() || 'ไม่มีข้อเสนอแนะเพิ่มเติม';
+
+            const q1 = Number(document.getElementById('sat-q1').value) || 5;
+            const q2 = Number(document.getElementById('sat-q2').value) || 5;
+            const q3 = Number(document.getElementById('sat-q3').value) || 5;
+            const q4 = Number(document.getElementById('sat-q4').value) || 5;
+            const q5 = Number(document.getElementById('sat-q5').value) || 5;
+
+            const avgRating = ((q1 + q2 + q3 + q4 + q5) / 5).toFixed(1);
+
+            const reviewData = {
+                type: 'satisfaction',
+                date: new Date().toLocaleString('th-TH'),
+                role: role,
+                name: name,
+                q1: q1,
+                q2: q2,
+                q3: q3,
+                q4: q4,
+                q5: q5,
+                avgRating: avgRating,
+                rating: avgRating,
+                comment: comment
+            };
+
+            let reviews = JSON.parse(localStorage.getItem('bowel_reviews') || '[]');
+            reviews.push(reviewData);
+            localStorage.setItem('bowel_reviews', JSON.stringify(reviews));
+
+            if (GOOGLE_SHEET_API_URL) {
+                try {
+                    await fetch(GOOGLE_SHEET_API_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(reviewData)
+                    });
+                } catch (err) {
+                    console.log('Failed to post satisfaction to Google Sheets:', err);
+                }
+            }
+
+            const successEl = document.getElementById('sat-success');
+            if (successEl) successEl.classList.remove('hidden');
+
+            alertCustom("บันทึกแบบประเมินความพึงพอใจเรียบร้อยแล้ว", () => {
+                location.reload();
+            });
         }
 
         function checkConstipationChecklist() {
@@ -1604,104 +1921,19 @@
             document.getElementById('emergency-modal')?.classList.add('hidden');
         }
 
-        function alertCustom(msg) {
+        function alertCustom(msg, callback = null) {
             document.getElementById('alert-msg-text').innerText = msg;
+            pendingAlertCallback = callback;
             document.getElementById('alert-modal')?.classList.remove('hidden');
         }
 
         function closeAlertModal() {
             document.getElementById('alert-modal')?.classList.add('hidden');
-        }
-
-        function submitQuiz(e) {
-            e.preventDefault();
-            const q1 = document.querySelector('input[name="q1"]:checked')?.value;
-            const q2 = document.querySelector('input[name="q2"]:checked')?.value;
-            const q3 = document.querySelector('input[name="q3"]:checked')?.value;
-            const q4 = document.querySelector('input[name="q4"]:checked')?.value;
-            const q5 = document.querySelector('input[name="q5"]:checked')?.value;
-
-            let score = 0;
-            if (q1 === 'false') score++;
-            if (q2 === 'true') score++;
-            if (q3 === 'true') score++;
-            if (q4 === 'false') score++;
-            if (q5 === 'true') score++;
-
-            const resultBox = document.getElementById('quiz-result');
-            const scoreEl = document.getElementById('quiz-score');
-            const levelEl = document.getElementById('quiz-level');
-            const adviceEl = document.getElementById('quiz-advice');
-
-            scoreEl.innerText = `คะแนน: ${score}/5`;
-            resultBox.classList.remove('hidden');
-
-            if (score === 5) {
-                levelEl.innerText = "ระดับความเข้าใจ: ดีเยี่ยม (100%)";
-                adviceEl.innerText = "คุณมีความเข้าใจเกี่ยวกับการดูแลระบบขับถ่ายอย่างถูกต้อง ยอดเยี่ยมมากครับ! ปฏิบัติตามแนวทางนี้สม่ำเสมอเพื่อสุขภาพลำไส้ที่ดี";
-            } else if (score >= 3) {
-                levelEl.innerText = "ระดับความเข้าใจ: ปานกลาง";
-                adviceEl.innerText = "คุณมีความเข้าใจในระดับดี แนะนำให้ทบทวนความรู้เพิ่มเติมในหมวดการนวดหน้าท้องและการเฝ้าระวังภาวะฉุกเฉินเพิ่มเติมครับ";
-            } else {
-                levelEl.innerText = "ระดับความเข้าใจ: ควรศึกษาเพิ่มเติม";
-                adviceEl.innerText = "แนะนำให้ศึกษาคู่มือหมวดต่างๆ อีกครั้งเพื่อการดูแลตนเองที่ถูกต้องและปลอดภัยครับ";
+            if (typeof pendingAlertCallback === 'function') {
+                const cb = pendingAlertCallback;
+                pendingAlertCallback = null;
+                cb();
             }
-
-            resultBox.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function setRating(r) {
-            currentRating = r;
-            const stars = document.querySelectorAll('#star-rating i');
-            stars.forEach((star, idx) => {
-                if (idx < r) {
-                    star.className = "fa-solid fa-star transition active:scale-125 text-amber-400";
-                } else {
-                    star.className = "fa-regular fa-star transition active:scale-125 text-slate-300";
-                }
-            });
-
-            const texts = ["ควรปรับปรุง (1/5)", "พอใช้ (2/5)", "ปานกลาง (3/5)", "ดี (4/5)", "ดีมาก (5/5)"];
-            document.getElementById('rating-text').innerText = texts[r - 1];
-        }
-
-        async function submitSatisfaction(e) {
-            e.preventDefault();
-            const name = document.getElementById('sat-name').value.trim() || 'ผู้ใช้งานทั่วไป';
-            const comment = document.getElementById('sat-comment').value.trim() || 'ไม่มีข้อเสนอแนะเพิ่มเติม';
-
-            const reviewData = {
-                date: new Date().toLocaleString('th-TH'),
-                name: name,
-                rating: currentRating,
-                comment: comment
-            };
-
-            // LocalStorage Save Fallback
-            let reviews = JSON.parse(localStorage.getItem('bowel_reviews') || '[]');
-            reviews.push(reviewData);
-            localStorage.setItem('bowel_reviews', JSON.stringify(reviews));
-
-            // Send to Google Sheets API
-            if (GOOGLE_SHEET_API_URL) {
-                try {
-                    await fetch(GOOGLE_SHEET_API_URL, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(reviewData)
-                    });
-                } catch (err) {
-                    console.log('Failed to post to Google Sheets:', err);
-                }
-            }
-
-            const successEl = document.getElementById('sat-success');
-            successEl.classList.remove('hidden');
-            setTimeout(() => { successEl.classList.add('hidden'); }, 4000);
-
-            document.getElementById('satisfaction-form').reset();
-            setRating(5);
         }
 
         function handleAdminLogin(e) {
@@ -1739,10 +1971,16 @@
             }
         }
 
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>"']/g, function(m) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
+            });
+        }
+
         async function loadAdminData() {
             let reviews = [];
 
-            // Fetch Google Sheets API data
             if (GOOGLE_SHEET_API_URL) {
                 try {
                     const res = await fetch(GOOGLE_SHEET_API_URL);
@@ -1751,7 +1989,6 @@
                         reviews = json.data.reverse();
                     }
                 } catch (e) {
-                    console.log('Using local reviews fallback');
                     reviews = JSON.parse(localStorage.getItem('bowel_reviews') || '[]').reverse();
                 }
             } else {
@@ -1761,8 +1998,11 @@
             const total = reviews.length;
             let avg = 0;
             if (total > 0) {
-                const sum = reviews.reduce((acc, r) => acc + Number(r.rating || 5), 0);
-                avg = (sum / total).toFixed(1);
+                const satReviews = reviews.filter(r => r.type !== 'quiz');
+                if (satReviews.length > 0) {
+                    const sum = satReviews.reduce((acc, r) => acc + Number(r.avgRating || r.rating || 5), 0);
+                    avg = (sum / satReviews.length).toFixed(1);
+                }
             }
 
             document.getElementById('admin-avg-rating').innerText = avg;
@@ -1778,22 +2018,53 @@
 
             let html = '';
             reviews.forEach(r => {
-                let stars = '';
-                for (let i = 1; i <= 5; i++) {
-                    stars += `<i class="fa-solid fa-star ${i <= r.rating ? 'text-amber-400' : 'text-slate-200'}"></i>`;
+                if (r.type === 'quiz') {
+                    const q1Ans = r.q1 === 'true' ? 'ตอบ ถูก' : 'ตอบ ผิด';
+                    const q2Ans = r.q2 === 'true' ? 'ตอบ ถูก' : 'ตอบ ผิด';
+                    const q3Ans = r.q3 === 'true' ? 'ตอบ ถูก' : 'ตอบ ผิด';
+                    const q4Ans = r.q4 === 'true' ? 'ตอบ ถูก' : 'ตอบ ผิด';
+                    const q5Ans = r.q5 === 'true' ? 'ตอบ ถูก' : 'ตอบ ผิด';
+
+                    const s1 = r.s1 !== undefined ? r.s1 : (r.q1 === 'false' ? 1 : 0);
+                    const s2 = r.s2 !== undefined ? r.s2 : (r.q2 === 'true' ? 1 : 0);
+                    const s3 = r.s3 !== undefined ? r.s3 : (r.q3 === 'true' ? 1 : 0);
+                    const s4 = r.s4 !== undefined ? r.s4 : (r.q4 === 'false' ? 1 : 0);
+                    const s5 = r.s5 !== undefined ? r.s5 : (r.q5 === 'true' ? 1 : 0);
+
+                    html += `
+                        <div class="bg-teal-50/70 p-3 rounded-2xl border border-teal-200 space-y-1">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="font-bold text-teal-900"><i class="fa-solid fa-clipboard-check text-teal-600 mr-1"></i> [${escapeHtml(r.testType || 'Quiz')}] ${escapeHtml(r.name)} (${escapeHtml(r.role || 'ผู้ป่วย')})</span>
+                                <span class="text-[10px] text-gray-400">${r.date || ''}</span>
+                            </div>
+                            <div class="text-xs text-teal-800 font-semibold">
+                                คะแนนรวม: <span class="text-teal-950 font-bold">${r.score}/5</span>
+                            </div>
+                            <div class="text-[11px] text-gray-600 bg-white p-2 rounded-xl border border-teal-100 space-y-0.5 font-medium">
+                                <div>ข้อ 1: <strong>${q1Ans}</strong> ${s1 === 1 ? '<span class="text-emerald-600 font-bold">(✓ 1 คะแนน)</span>' : '<span class="text-red-500 font-bold">(✗ 0 คะแนน)</span>'}</div>
+                                <div>ข้อ 2: <strong>${q2Ans}</strong> ${s2 === 1 ? '<span class="text-emerald-600 font-bold">(✓ 1 คะแนน)</span>' : '<span class="text-red-500 font-bold">(✗ 0 คะแนน)</span>'}</div>
+                                <div>ข้อ 3: <strong>${q3Ans}</strong> ${s3 === 1 ? '<span class="text-emerald-600 font-bold">(✓ 1 คะแนน)</span>' : '<span class="text-red-500 font-bold">(✗ 0 คะแนน)</span>'}</div>
+                                <div>ข้อ 4: <strong>${q4Ans}</strong> ${s4 === 1 ? '<span class="text-emerald-600 font-bold">(✓ 1 คะแนน)</span>' : '<span class="text-red-500 font-bold">(✗ 0 คะแนน)</span>'}</div>
+                                <div>ข้อ 5: <strong>${q5Ans}</strong> ${s5 === 1 ? '<span class="text-emerald-600 font-bold">(✓ 1 คะแนน)</span>' : '<span class="text-red-500 font-bold">(✗ 0 คะแนน)</span>'}</div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    html += `
+                        <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 space-y-1.5">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="font-bold text-gray-800">${escapeHtml(r.name)} <span class="text-[10px] text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">${escapeHtml(r.role || 'ผู้ป่วย')}</span></span>
+                                <span class="text-[10px] text-gray-400">${r.date || ''}</span>
+                            </div>
+                            <div class="text-[11px] text-gray-600 bg-white p-2 rounded-xl border border-slate-100 space-y-0.5">
+                                <div>1. ข้อมูลชัดเจน: <strong>${r.q1 || 5}/5</strong> | 2. ใช้งานง่าย: <strong>${r.q2 || 5}/5</strong></div>
+                                <div>3. ความพึงพอใจรวม: <strong>${r.q3 || 5}/5</strong> | 4. เพิ่มประสิทธิภาพ: <strong>${r.q4 || 5}/5</strong></div>
+                                <div>5. นำไปใช้ปฏิบัติจริง: <strong>${r.q5 || 5}/5</strong></div>
+                            </div>
+                            <p class="text-xs text-gray-600 italic">" ${escapeHtml(r.comment)} "</p>
+                        </div>
+                    `;
                 }
-                html += `
-                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200 space-y-1">
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="font-bold text-gray-800">${escapeHtml(r.name)}</span>
-                            <span class="text-[10px] text-gray-400">${r.date || ''}</span>
-                        </div>
-                        <div class="flex items-center gap-1 text-xs">
-                            ${stars} <span class="text-[10px] text-gray-500 font-medium ml-1">(${r.rating}/5)</span>
-                        </div>
-                        <p class="text-xs text-gray-600 mt-1">${escapeHtml(r.comment)}</p>
-                    </div>
-                `;
             });
             listEl.innerHTML = html;
         }
@@ -1813,10 +2084,9 @@
         async function confirmClearAdminData() {
             closeClearConfirmModal();
 
-            // ลบข้อมูลใน LocalStorage
             localStorage.removeItem('bowel_reviews');
+            localStorage.removeItem('bowel_quizzes');
 
-            // ส่งคำขอลบไปยัง Google Sheets API
             if (GOOGLE_SHEET_API_URL) {
                 try {
                     await fetch(GOOGLE_SHEET_API_URL, {
@@ -1830,19 +2100,17 @@
                 }
             }
 
-            // โหลดข้อมูลหน้าหลังบ้านใหม่
             await loadAdminData();
             alertCustom('ล้างข้อมูลการประเมินในฐานข้อมูลเรียบร้อยแล้ว');
         }
 
-        function escapeHtml(text) {
-            if (!text) return '';
-            return text.replace(/[&<>"']/g, function(m) {
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>"']/g, function(m) {
                 return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
             });
         }
 
-        // Initialize application on load
         window.onload = function() {
             switchTab('home');
         };
