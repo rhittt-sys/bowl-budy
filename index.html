@@ -1054,9 +1054,117 @@
                 </div>
             </div>
 
-            <!-- SUB-MENU 5.1 -->
+            <!-- SUB-MENU 5.1: Autonomic Dysreflexia (AD) -->
             <div id="tab-sub-5-1" class="tab-content p-4 space-y-4 hidden">
-                <!-- ... existing content ... -->
+                <button onclick="switchTab('menu-5')" class="text-red-700 text-xs font-semibold flex items-center gap-1.5 mb-1 active:scale-95 transition">
+                    <i class="fa-solid fa-arrow-left"></i> กลับหมวดภาวะฉุกเฉิน
+                </button>
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-red-100 space-y-4">
+                    <div class="border-b pb-3 flex items-center justify-between">
+                        <div>
+                            <span class="bg-red-100 text-red-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">ภาวะฉุกเฉิน</span>
+                            <h2 class="text-base font-bold text-gray-800 mt-1">Autonomic Dysreflexia (AD)</h2>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-heart-pulse animate-pulse"></i>
+                        </div>
+                    </div>
+
+                    <div class="w-full rounded-2xl overflow-hidden border border-red-200 shadow-sm bg-white relative cursor-pointer group" onclick="openImageModal(document.getElementById('img-ad-17').src)">
+                        <img id="img-ad-17" src="img/17.png" alt="Autonomic Dysreflexia (AD) สัญญาณเตือนและสาเหตุฉุกเฉิน" class="w-full h-auto object-contain rounded-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80';">
+                    </div>
+                    <p class="text-[10px] text-gray-500 text-center font-medium">
+                        <i class="fa-solid fa-magnifying-glass-plus text-red-600 mr-1"></i> แตะที่ภาพเพื่อดูขยายเต็มจอ
+                    </p>
+
+                    <!-- Definition & Warning Banner -->
+                    <div class="bg-red-50 p-4 rounded-2xl border border-red-200 text-red-950 space-y-2">
+                        <h3 class="font-bold text-red-900 flex items-center gap-1.5 text-xs sm:text-sm">
+                            <i class="fa-solid fa-triangle-exclamation text-red-600"></i> Autonomic Dysreflexia (AD) คืออะไร?
+                        </h3>
+                        <p class="text-xs text-red-900 leading-relaxed">
+                            ภาวะความดันโลหิตสูงเฉียบพลันที่อันตรายถึงชีวิต พบได้บ่อยในผู้ป่วยบาดเจ็บไขสันหลัง<strong>ระดับอกที่ 6 (T6) ขึ้นไป</strong> เกิดจากระบบประสาทตอบสนองต่อสิ่งกระตุ้นที่เป็นอันตรายใต้ระดับรอยโรคอย่างรุนแรงโดยไม่สามารถควบคุมได้
+                        </p>
+                    </div>
+
+                    <!-- Symptoms Box -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2.5">
+                        <h3 class="font-bold text-gray-800 text-xs sm:text-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-user-ninja text-red-600"></i> สัญญาณเตือนอันตราย (Symptoms)
+                        </h3>
+                        <div class="grid grid-cols-1 gap-2 text-xs">
+                            <div class="p-2.5 bg-white rounded-xl border border-slate-200 flex items-center gap-2.5">
+                                <i class="fa-solid fa-head-side-virus text-red-500 text-base shrink-0"></i>
+                                <span><strong>ปวดศีรษะรุนแรง:</strong> ปวดตุ๊บๆ ที่ศีรษะอย่างฉุกเฉิน</span>
+                            </div>
+                            <div class="p-2.5 bg-white rounded-xl border border-slate-200 flex items-center gap-2.5">
+                                <i class="fa-solid fa-gauge-high text-red-500 text-base shrink-0"></i>
+                                <span><strong>ความดันโลหิตสูงมาก:</strong> สูงกว่าปกติ 20-40 mmHg</span>
+                            </div>
+                            <div class="p-2.5 bg-white rounded-xl border border-slate-200 flex items-center gap-2.5">
+                                <i class="fa-solid fa-droplet text-red-500 text-base shrink-0"></i>
+                                <span><strong>เหงื่อออกมาก:</strong> บริเวณเหนือระดับบาดเจ็บ (หน้า คอ อก)</span>
+                            </div>
+                            <div class="p-2.5 bg-white rounded-xl border border-slate-200 flex items-center gap-2.5">
+                                <i class="fa-solid fa-face-flushed text-red-500 text-base shrink-0"></i>
+                                <span><strong>ผิวหนังคัดแดง:</strong> มีผื่นแดงบนใบหน้า คอ และคัดจมูก</span>
+                            </div>
+                            <div class="p-2.5 bg-white rounded-xl border border-slate-200 flex items-center gap-2.5">
+                                <i class="fa-solid fa-heart-crack text-red-500 text-base shrink-0"></i>
+                                <span><strong>หัวใจเต้นช้าลง:</strong> หรือรู้สึกแน่นหน้าอก วิตกกังวล</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Common Causes Box -->
+                    <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200 text-amber-950 space-y-2">
+                        <h3 class="font-bold text-amber-900 flex items-center gap-1.5 text-xs sm:text-sm">
+                            <i class="fa-solid fa-list-check text-amber-600"></i> สาเหตุที่พบบ่อยที่สุด
+                        </h3>
+                        <ul class="list-disc pl-5 space-y-1.5 text-xs text-amber-950 leading-relaxed">
+                            <li><strong>ระบบขับถ่าย (Bowel):</strong> อุจจาระคั่งค้าง แน่น ท้องผูกรุนแรง หรือเกิดขณะกระตุ้น/ล้วงอุจจาระ</li>
+                            <li><strong>ระบบทางเดินปัสสาวะ (Bladder):</strong> กระเพาะปัสสาวะตึงแน่น สายยางปัสสาวะพับ งอ อุดตัน หรือติดเชื้อ</li>
+                            <li><strong>สาเหตุอื่น:</strong> แผลกดทับ เสื้อผ้า/สายรัดแน่นเกินไป เล็บขบ หรือการเปลี่ยนแปลงอุณหภูมิฉุกเฉิน</li>
+                        </ul>
+                    </div>
+
+                    <!-- Action & First Aid Steps -->
+                    <div class="bg-red-50/70 p-4 rounded-2xl border border-red-200 space-y-3">
+                        <h3 class="font-bold text-red-950 text-xs sm:text-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-kit-medical text-red-600"></i> ขั้นตอนการปฐมพยาบาลและแก้ไขทันที
+                        </h3>
+                        <ol class="space-y-2 text-xs text-red-950">
+                            <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-red-100">
+                                <span class="bg-red-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">1</span>
+                                <span><strong>จัดให้นั่งตัวตรง (90 องศา):</strong> ปล่อยขาห้อยลงทันที เพื่อช่วยลดความดันโลหิตในสมอง</span>
+                            </li>
+                            <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-red-100">
+                                <span class="bg-red-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">2</span>
+                                <span><strong>ปลดสิ่งคับรัด:</strong> คลายเสื้อผ้า กางเกง ถุงเท้า หรือผ้ารัดหน้าท้องออกทันที</span>
+                            </li>
+                            <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-red-100">
+                                <span class="bg-red-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">3</span>
+                                <span><strong>ตรวจเช็คปัสสาวะ:</strong> ตรวจดูสายสวนปัสสาวะว่าพับ งอ หรืออุดตันหรือไม่ หากตึงแน่นให้เทปัสสาวะออกทันที</span>
+                            </li>
+                            <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-red-100">
+                                <span class="bg-red-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">4</span>
+                                <span><strong>ตรวจเช็คการขับถ่าย:</strong> หากเกิดขณะนวด/ล้วงอุจจาระ <u>ให้หยุดทำทันที</u> หากมีอุจจาระคั่งค้างให้ใช้เจลหล่อลื่นผสมยาชา (Xylocaine Jelly) ทาเหน็บแล้วล้วงอย่างเบามือ</span>
+                            </li>
+                            <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-red-100">
+                                <span class="bg-red-600 text-white w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">5</span>
+                                <span><strong>พบแพทย์ทันที:</strong> หากอาการไม่ดีขึ้นหรือความดันโลหิตยังคงสูง ให้รีบนำส่งโรงพยาบาลหรือโทร 1669</span>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Call Emergency Button & Close -->
+                    <div class="pt-2 space-y-2">
+                        <button onclick="openEmergencyModal()" class="w-full bg-red-600 hover:bg-red-700 active:scale-95 text-white font-bold py-3 rounded-xl shadow-md transition text-xs flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone-volume"></i> โทรสายด่วนฉุกเฉิน 1669
+                        </button>
+                        <button onclick="switchTab('menu-5')" class="w-full bg-teal-600 text-white py-2.5 rounded-xl text-xs font-semibold shadow active:scale-95 transition">เสร็จสิ้น (กลับหน้าหลักหมวด)</button>
+                    </div>
+                </div>
             </div>
 
             <!-- TAB MENU 6: แบบทดสอบประเมินความเข้าใจ (Sub-Menu Center) -->
